@@ -77,10 +77,14 @@ document.addEventListener("DOMContentLoaded", function() {
 
     // Ürün listesi oluşturulurken
     function createProductCard(product) {
+        // Şirket ismini al (örn: "FullBoard - Alçı Plakalar" -> "FullBoard")
+        const companyName = product.parentCategory.split(' - ')[0];
+        
         return `
-            <a href="./product-detail.html?id=${product.id}" class="product-card" data-id="${product.id}">
+            <a href="product-detail.html?id=${product.id}" class="product-card" data-id="${product.id}">
                 <img src="${product.image}" alt="${product.name}" class="product-image">
                 <h3>${product.name}</h3>
+                <p class="product-company">${companyName}</p>
             </a>
         `;
     }
@@ -265,14 +269,37 @@ function createDropdownMenu() {
                 const prodCat = subCat.subCategories[prodCatKey];
                 const li = document.createElement('li');
                 const a = document.createElement('a');
-                const url = `products.html?main=${encodeURIComponent(mainCat)}&parent=${encodeURIComponent(subCatKey)}&category=${encodeURIComponent(prodCatKey)}`;
-                a.href = url;
+                
+                // Alt kategori için benzersiz ID oluştur
+                const targetId = `${mainCat}-${subCatKey}-${prodCatKey}`;
+                a.href = '#' + targetId;
                 a.textContent = prodCat.name;
                 
-                // Update click handler
+                // Click event listener'ı güncelle
                 a.addEventListener('click', function(e) {
                     e.preventDefault();
-                    window.location.href = url;
+                    
+                    // Önce ana kategori bölümünü bul
+                    const mainSection = document.getElementById(mainCat);
+                    if (mainSection) {
+                        // Alt kategori başlığını bul - tam eşleşme için
+                        const subCategoryTitle = Array.from(mainSection.querySelectorAll('h3'))
+                            .find(el => el.textContent === prodCat.name.split(' - ').pop());
+                        
+                        if (subCategoryTitle) {
+                            // Header yüksekliğini hesapla
+                            const headerHeight = document.querySelector('header').offsetHeight;
+                            
+                            // Smooth scroll ile alt kategoriye git
+                            window.scrollTo({
+                                top: subCategoryTitle.offsetTop - headerHeight - 20, // 20px ekstra boşluk
+                                behavior: 'smooth'
+                            });
+                        }
+                        
+                        // Dropdown menüyü kapat
+                        dropdownContent.style.display = 'none';
+                    }
                 });
                 
                 li.appendChild(a);
@@ -286,83 +313,92 @@ function createDropdownMenu() {
         dropdownContent.appendChild(categorySection);
     }
 
-    // Add hover functionality
+    // Hover işlevselliğini ekle
     const dropdown = document.querySelector('.dropdown');
     if (dropdown) {
         dropdown.addEventListener('mouseenter', function() {
-            const dropdownContent = this.querySelector('.dropdown-content');
-            if (dropdownContent) {
-                dropdownContent.style.display = 'block';
-            }
+            dropdownContent.style.display = 'block';
         });
         
         dropdown.addEventListener('mouseleave', function() {
-            const dropdownContent = this.querySelector('.dropdown-content');
-            if (dropdownContent) {
-                dropdownContent.style.display = 'none';
-            }
+            dropdownContent.style.display = 'none';
         });
     }
 }
 
 function displayProducts() {
-    const urlParams = new URLSearchParams(window.location.search);
-    const mainCategory = urlParams.get('main');
-    const parentCategory = urlParams.get('parent');
-    const category = urlParams.get('category');
-
-    // Tüm ürün bölümlerini gizle
     const allSections = document.querySelectorAll('.category-section');
-    allSections.forEach(section => section.style.display = 'none');
-
-    if (mainCategory && parentCategory && category) {
-        // Belirli bir kategori seçilmişse
-        const selectedProducts = Object.values(productsData).filter(product => 
-            product.mainCategory === mainCategory &&
-            product.parentCategory === parentCategory &&
-            product.category === category
-        );
-
-        // Doğru section ID'sini bul
-        const section = document.getElementById(mainCategory);
+    allSections.forEach(section => {
+        section.style.display = 'block';
+        const categoryName = section.id;
+        const mainCategory = categories[categoryName];
         
-        if (section) {
-            section.style.display = 'block';
-            const productGrid = section.querySelector('.product-grid');
-            if (productGrid) {
-                if (selectedProducts.length > 0) {
-                    productGrid.innerHTML = selectedProducts.map(createProductCard).join('');
-                } else {
-                    productGrid.innerHTML = '<p>Bu kategoride ürün bulunamadı.</p>';
+        if (mainCategory) {
+            let sectionHTML = '';
+            
+            // Ana kategori başlığı
+            sectionHTML += `<div class="title-container"><h2>${categoryName}</h2></div>`;
+            
+            // Benzersiz ürün kategorilerini topla
+            const uniqueProductCategories = new Set();
+            
+            // Önce tüm benzersiz ürün kategorilerini bul
+            for (const subCatKey in mainCategory.subCategories) {
+                const subCat = mainCategory.subCategories[subCatKey];
+                for (const prodCatKey in subCat.subCategories) {
+                    const prodCat = subCat.subCategories[prodCatKey];
+                    const productCategory = prodCat.name.split(' - ').pop();
+                    uniqueProductCategories.add(productCategory);
                 }
             }
-        }
-    } else {
-        // Hiçbir kategori seçilmemişse tüm ürünleri göster
-        allSections.forEach(section => {
-            section.style.display = 'block';
-            const productGrid = section.querySelector('.product-grid');
-            if (productGrid) {
-                const categoryName = section.id;
-                const products = Object.values(productsData).filter(product => 
-                    product.mainCategory === categoryName
-                );
+            
+            // Her benzersiz ürün kategorisi için ürünleri göster
+            uniqueProductCategories.forEach(productCategory => {
+                // Ürün kategorisi başlığı
+                sectionHTML += `<div class="title-container"><h3>${productCategory}</h3></div>`;
+                
+                // Bu kategorideki tüm ürünleri topla
+                const products = Object.values(productsData).filter(product => {
+                    const productCategoryName = product.category.split(' - ').pop();
+                    return product.mainCategory === categoryName && 
+                           productCategoryName === productCategory;
+                });
+                
+                // Ürünleri göster
                 if (products.length > 0) {
-                    productGrid.innerHTML = products.map(createProductCard).join('');
+                    sectionHTML += '<div class="product-grid">';
+                    sectionHTML += products.map(product => createProductCard(product)).join('');
+                    sectionHTML += '</div>';
                 } else {
-                    productGrid.innerHTML = '<p>Bu kategoride ürün bulunamadı.</p>';
+                    sectionHTML += '<p>Bu kategoride ürün bulunamadı.</p>';
                 }
-            }
-        });
-    }
+            });
+            
+            section.innerHTML = sectionHTML;
+        }
+    });
 }
+
 function createProductCard(product) {
+    // Şirket ismini al (örn: "FullBoard - Alçı Plakalar" -> "FullBoard")
+    const companyName = product.parentCategory.split(' - ')[0];
+    
     return `
         <a href="product-detail.html?id=${product.id}" class="product-card" data-id="${product.id}">
             <img src="${product.image}" alt="${product.name}" class="product-image">
             <h3>${product.name}</h3>
-            <p class="product-category">${product.parentCategory} - ${product.category}</p>
+            <p class="product-company">${companyName}</p>
         </a>
     `;
 }
+
+// Sayfa yüklendiğinde dropdown menüyü oluştur ve ürünleri göster
+document.addEventListener("DOMContentLoaded", function() {
+    createDropdownMenu();
+    
+    // Ürün listesini göster - sadece products.html sayfasında
+    if (window.location.pathname.endsWith('products.html')) {
+        displayProducts();
+    }
+});
 
