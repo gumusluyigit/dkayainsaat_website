@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ürün Detayı - D KAYA İNŞAAT</title>
+    <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+    <header>
+        <a href="./index.html"><img src="./assets/dkayainsaat_logo.jpg" alt="D KAYA İNŞAAT Logo" class="logo"></a>
+        <h1 class="site-title">D KAYA İNŞAAT</h1>
+        <nav>
+            <ul class="nav-menu">
+                <li><a href="./index.html">Ana Sayfa</a></li>
+                <li class="dropdown">
+                    <a href="./products.html">Ürünler</a>
+                    <div class="dropdown-content">
+                        <!-- Kategoriler JavaScript ile doldurulacak -->
+                    </div>
+                </li>
+                <li><a href="./contact.html">İletişim</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <div class="product-detail">
+            <div class="product-info">
+                <h2 id="product-name"></h2>
+                <p id="product-description"></p>
+                <div class="contact-info">
+                    <p>Bu ürün hakkında bilgi almak için:</p>
+                    <a href="https://wa.me/905324475108" class="phone-button whatsapp-button" target="_blank">
+                        <i class="phone-icon">📞</i> WhatsApp - Volkan Kaya
+                    </a>
+                    <a href="https://wa.me/905347127724" class="phone-button whatsapp-button" target="_blank">
+                        <i class="phone-icon">📞</i> WhatsApp - Sarp Kaya
+                    </a>
+                </div>
+                <a href="products.html" class="back-button">Geri Dön</a>
+            </div>
+            <div class="product-image-container">
+                <img id="product-image" src="" alt="" class="product-image-large">
+            </div>
+        </div>
+    </main>
+    <footer>
+        <p>&copy; 2023 D KAYA İNŞAAT</p>
+    </footer>
+    <script src="./products-data.js"></script>
+    <script src="./script.js"></script>
+</body>
+</html> 

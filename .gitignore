@@ -1,0 +1,16 @@
+# Sistem dosyaları
+.DS_Store
+Thumbs.db
+
+# IDE dosyaları
+.idea/
+.vscode/
+*.sublime-project
+*.sublime-workspace
+
+# Node modülleri (eğer varsa)
+node_modules/
+
+# Diğer geçici dosyalar
+*.log
+*.tmp 

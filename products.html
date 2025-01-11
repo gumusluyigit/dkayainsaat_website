@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ürünler - D KAYA İNŞAAT</title>
+    <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+    <header>
+        <a href="./index.html"><img src="./assets/dkayainsaat_logo.jpg" alt="D KAYA İNŞAAT Logo" class="logo"></a>
+        <h1 class="site-title">D KAYA İNŞAAT</h1>
+        <nav>
+            <ul class="nav-menu">
+                <li><a href="./index.html">Ana Sayfa</a></li>
+                <li class="dropdown">
+                    <a href="./products.html">Ürünler</a>
+                    <div class="dropdown-content">
+                        <!-- Kategoriler JavaScript ile doldurulacak -->
+                    </div>
+                </li>
+                <li><a href="./contact.html">İletişim</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <div class="products-container">
+            <section class="category-section" id="Alçılar">
+                <h2>Alçılar</h2>
+                <div class="product-grid"></div>
+            </section>
+            
+            <section class="category-section" id="Boyalar">
+                <h2>Boyalar</h2>
+                <div class="product-grid"></div>
+            </section>
+            
+            <section class="category-section" id="Yapı Kimyasalları">
+                <h2>Yapı Kimyasalları</h2>
+                <div class="product-grid"></div>
+            </section>
+            
+            <section class="category-section" id="Asma Tavan">
+                <h2>Asma Tavan</h2>
+                <div class="product-grid"></div>
+            </section>
+        </div>
+    </main>
+    <footer>
+        <p>&copy; 2023 D KAYA İNŞAAT</p>
+    </footer>
+    <script src="./products-data.js"></script>
+    <script src="./script.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            createDropdownMenu();
+            displayProducts();
+        });
+    </script>
+</body>
+</html>
