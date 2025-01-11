@@ -15,6 +15,24 @@
     margin: 0;
     padding: 0;
     width: 100%;
+    background-color: white; /* Default background */
+}
+
+/* Specific category backgrounds */
+.category-section#Alçılar {
+    background-color: #FFF3B0 !important;
+}
+
+.category-section#Boyalar {
+    background-color: #FFE5B4 !important;
+}
+
+.category-section#Yapı\ Kimyasalları {
+    background-color: #E8F5E9 !important;
+}
+
+.category-section#Asma\ Tavan {
+    background-color: #E3F2FD !important;
 }
 
 /* Container for titles */
@@ -807,13 +825,14 @@ footer {
     background-color: #FFE5B4;
 }
 
-#Yapı-Kimyasalları {
-    background-color: #FFF0B5;
+#Yapı\ Kimyasalları {
+    background-color: #E8F5E9;
 }
 
-#Asma-Tavan {
-    background-color: #FFE8C2;
+#Asma\ Tavan {
+    background-color: #E3F2FD;
 }
+
 /* Add hover effect for better visibility */
 .category-section:hover {
     box-shadow: none;
@@ -841,12 +860,12 @@ footer {
     background-color: #FFE5B4;
 }
 
-#Yapı-Kimyasalları {
-    background-color: #FFF0B5;
+#Yapı\ Kimyasalları {
+    background-color: #E8F5E9;
 }
 
-#Asma-Tavan {
-    background-color: #FFE8C2;
+#Asma\ Tavan {
+    background-color: #E3F2FD;
 }
 
 /* Remove any border radius that might cause gaps */
@@ -864,12 +883,12 @@ footer {
     background-color: #FFE5B4;
 }
 
-#Yapı-Kimyasalları {
-    background-color: #FFF0B5;
+#Yapı\ Kimyasalları {
+    background-color: #E8F5E9;
 }
 
-#Asma-Tavan {
-    background-color: #FFE8C2;
+#Asma\ Tavan {
+    background-color: #E3F2FD;
 }
 
 /* Remove any potential gaps between sections */
@@ -898,14 +917,14 @@ footer {
     padding: 0;
 }
 
-#Yapı-Kimyasalları {
-    background-color: #FFF0B5;
+#Yapı\ Kimyasalları {
+    background-color: #E8F5E9;
     margin: 0;
     padding: 0;
 }
 
-#Asma-Tavan {
-    background-color: #FFE8C2;
+#Asma\ Tavan {
+    background-color: #E3F2FD;
     margin: 0;
     padding: 0;
 }

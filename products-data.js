@@ -631,6 +631,87 @@ const productsData = {
         mainCategory: "Boyalar",
         description: "Tik yağı",
         image: "./assets/Cubo/ahsap_koruyucular/cubowood_tik_yagi.jpg"
+    },
+    "metal_asma_tavan": {
+        id: "metal_asma_tavan",
+        name: "Metal Asma Tavan",
+        category: "Asma Tavan",
+        parentCategory: "Laçin Yapı",
+        mainCategory: "Asma Tavan",
+        description: "Alüminyum ya da sıcak daldırma galvanizli saclardan üretilen, korozyona dayanıklı, homojen yapılı, A1 yangın sınıfında, elektrostatik toz boyama ile istenen RAL rengine boyanabilir panellerdir. İhtiyaca uygun ebat ve sac kalınlıklarında, perfore ya da düz yüzeyleri olabilir. Farklı taşıyıcı sistemlere uygun kenar detayı alternatiﬂeri mevcuttur.",
+        image: "./assets/LacinYapi/asma_tavan/metal.jpg"
+    },
+    "pvc_asma_tavan": {
+        id: "pvc_asma_tavan",
+        name: "PVC Asma Tavan",
+        category: "Asma Tavan",
+        parentCategory: "Laçin Yapı",
+        mainCategory: "Asma Tavan",
+        description: "",
+        image: "./assets/LacinYapi/asma_tavan/t22.jpg"
+    },
+    "gergi_asma_tavan": {
+        id: "gergi_asma_tavan",
+        name: "Gergi Asma Tavan",
+        category: "Asma Tavan",
+        parentCategory: "Laçin Yapı",
+        mainCategory: "Asma Tavan",
+        description: "Transparan, metalik, parlak ve mat lake, süet dokulu gibi özel kumaşların ısıtılıp gerilme suretiyle montajı yapılan dekoratif bir tavan uygulamasıdır.",
+        image: "./assets/LacinYapi/asma_tavan/gergi.jpg"
+    },
+    "t24_tasiyici_sistem": {
+        id: "t24_tasiyici_sistem",
+        name: "T24 Taşıyıcı Sistemler",
+        category: "Asma Tavan",
+        parentCategory: "Laçin Yapı",
+        mainCategory: "Asma Tavan",
+        description: "Türk Standartları Enstitüsü Avrupa Standardını aynen baz aldığı Asma Tavan Taşıyıcı Sisteminin yük taşıma özelliği; TS-EN-13964 gerekler ve deney yöntemleri standardına göre, Metal Asma Tavan Taşıyıcı Sistem Proﬁllerinin eğilme deneyine tabi tutulmuş ve Yük Taşıma Performans sehim sınırı olan 0,2 mm'nin altında performans verileri oluştuğundan TSE uygunluk belgesine sahiptir.",
+        image: "./assets/LacinYapi/asma_tavan/t24.jpg"
+    },
+    "tas_yunu_asma_tavan": {
+        id: "tas_yunu_asma_tavan",
+        name: "Taş Yünü Asma Tavan",
+        category: "Asma Tavan",
+        parentCategory: "Laçin Yapı",
+        mainCategory: "Asma Tavan",
+        description: "Prosista Taşyünü Asma Tavan Panelleri: Taşyünü Asma Tavan sistemler modüler tavanda hemen hemen en eski üründür. Akustik değeri, nem direnci, yangın dayanımı, ışık yansıtma değerleri ve kenar çeşitleri bakımından birçok seçeneği ekonomik olarak sunan bir tavan panelidir.",
+        image: "./assets/LacinYapi/asma_tavan/tas_yunu.jpg"
+    },
+    "karopan_asma_tavan": {
+        id: "karopan_asma_tavan",
+        name: "Karopan Asma Tavan",
+        category: "Asma Tavan",
+        parentCategory: "Laçin Yapı",
+        mainCategory: "Asma Tavan",
+        description: "Karopan asma tavanlarda T-15, T-24, ve T-24 kanallı taşıyıcı sistemleri ile dekoratif asma tavan görünümü elde edilebilir. Bu sistem uygulama hızı ve kolay montaj imkanı sağlar.",
+        image: "./assets/LacinYapi/asma_tavan/karopan.jpg"
+    },
+    "baffle_asma_tavan": {
+        id: "baffle_asma_tavan",
+        name: "Baffle Asma Tavan",
+        category: "Asma Tavan",
+        parentCategory: "Laçin Yapı",
+        mainCategory: "Asma Tavan",
+        description: "Bafﬂe Tavanlar, özel taşıyıcılarına dikey olarak montaj yapılan doğrusal panellerden oluşur. Yan duvarlardan bağımsız olarak sadece taşıyıcı sistem ile montaj yapılarak yüzer bir tavan uygulaması da elde edilebilir. Bafﬂe tavanlar, mekanın hacmini daraltmadan dekoratif bir görünüm kazandırır.",
+        image: "./assets/LacinYapi/asma_tavan/baffle.jpg"
+    },
+    "mesh_asma_tavan": {
+        id: "mesh_asma_tavan",
+        name: "Mesh Asma Tavan",
+        category: "Asma Tavan",
+        parentCategory: "Laçin Yapı",
+        mainCategory: "Asma Tavan",
+        description: "Metal plakaların genleştirilerek hücre görünümü verilmesi ile elde edilen özel asma tavan panelleridir. Özel metal dokusu ile mükemmel ışık ve hava geçirgenliği sağlar. Genleştirilmiş metal asma tavan paneller, isteğe bağlı olarak Hook-on, Clip-in, lay-in ve lay-on asma tavan sistemlere entegre edilebilir.",
+        image: "./assets/LacinYapi/asma_tavan/mesh.jpg"
+    },
+    "petek_asma_tavan": {
+        id: "petek_asma_tavan",
+        name: "Petek Asma Tavan",
+        category: "Asma Tavan",
+        parentCategory: "Laçin Yapı",
+        mainCategory: "Asma Tavan",
+        description: "Kendinden taşıyıcılı hücre boşluklu asma tavan sistemidir. Aks mesafesi istenilen ölçülerde 5cmx5cm, 7.5cmx7.5cm 10cmx10cm, 15cmx15cm, 20cmx20cm, 30cmx30cm olarak proje detayına göre üretilebilir. Tavan ile tesisat arasını bir maske gibi kapatarak daha dekoratif bir görüntü sağlar.",
+        image: "./assets/LacinYapi/asma_tavan/petek.jpg"
     }
 };
 
@@ -769,6 +850,30 @@ const categories = {
                             "cubowood_parke_vernigi",
                             "cubowood_yat_vernik",
                             "cubowood_tik_yagi"
+                        ]
+                    }
+                }
+            }
+        }
+    },
+    "Asma Tavan": {
+        name: "Asma Tavan",
+        subCategories: {
+            "Laçin Yapı": {
+                name: "Laçin Yapı",
+                subCategories: {
+                    "Asma Tavan": {
+                        name: "Asma Tavan",
+                        products: [
+                            "metal_asma_tavan",
+                            "pvc_asma_tavan",
+                            "gergi_asma_tavan",
+                            "t24_tasiyici_sistem",
+                            "tas_yunu_asma_tavan",
+                            "karopan_asma_tavan",
+                            "baffle_asma_tavan",
+                            "mesh_asma_tavan",
+                            "petek_asma_tavan"
                         ]
                     }
                 }
