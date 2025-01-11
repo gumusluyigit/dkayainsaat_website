@@ -539,6 +539,98 @@ const productsData = {
         mainCategory: "Boyalar",
         description: "Dış Cephe Boyası\n\nAkrilik kopolimer esaslı, su bazlı dış cephe macunudur.",
         image: "./assets/Cubo/dis_Mekan_Boyalari/acrylic_putty.png"
+    },
+
+    // Ahşap Koruyucular
+    "concept_lux": {
+        id: "concept_lux",
+        name: "Concept Lux Kokusuz Parlak Boya",
+        category: "Ahşap Koruyucular",
+        parentCategory: "Cubo Boya",
+        mainCategory: "Boyalar",
+        description: "Kokusuz, parlak, dekoratif ahşap koruyucu boya",
+        image: "./assets/Cubo/ahsap_koruyucular/concept_lux.jpg"
+    },
+    "cubowood_su_bazli_vernikli": {
+        id: "cubowood_su_bazli_vernikli",
+        name: "Cubowood Su Bazlı Vernikli Parlak Ahşap Koruyucu",
+        category: "Ahşap Koruyucular",
+        parentCategory: "Cubo Boya",
+        mainCategory: "Boyalar",
+        description: "Su bazlı, vernikli parlak ahşap koruyucu",
+        image: "./assets/Cubo/ahsap_koruyucular/cubowood_su_bazli_vernikli.jpg"
+    },
+    "cubowood_su_bazli_dekoratif": {
+        id: "cubowood_su_bazli_dekoratif",
+        name: "Cubowood Su Bazlı Dekoratif Mat Ahşap Koruyucu",
+        category: "Ahşap Koruyucular",
+        parentCategory: "Cubo Boya",
+        mainCategory: "Boyalar",
+        description: "Su bazlı, dekoratif mat ahşap koruyucu",
+        image: "./assets/Cubo/ahsap_koruyucular/cubowood_su_bazli_dekoratif.jpg"
+    },
+    "cubowood_su_bazli_parlak": {
+        id: "cubowood_su_bazli_parlak",
+        name: "Cubowood Su Bazlı Parlak Vernik",
+        category: "Ahşap Koruyucular",
+        parentCategory: "Cubo Boya",
+        mainCategory: "Boyalar",
+        description: "Su bazlı parlak vernik",
+        image: "./assets/Cubo/ahsap_koruyucular/cubowood_su_bazli_parlak.jpg"
+    },
+    "cubowood_su_bazli_mat": {
+        id: "cubowood_su_bazli_mat",
+        name: "Cubowood Su Bazlı Mat Vernik",
+        category: "Ahşap Koruyucular",
+        parentCategory: "Cubo Boya",
+        mainCategory: "Boyalar",
+        description: "Su bazlı mat vernik",
+        image: "./assets/Cubo/ahsap_koruyucular/cubowood_su_bazli_mat.jpg"
+    },
+    "cubowood_vernikli_parlak": {
+        id: "cubowood_vernikli_parlak",
+        name: "Cubowood Vernikli Parlak Ahşap Koruyucu",
+        category: "Ahşap Koruyucular",
+        parentCategory: "Cubo Boya",
+        mainCategory: "Boyalar",
+        description: "Vernikli parlak ahşap koruyucu",
+        image: "./assets/Cubo/ahsap_koruyucular/cubowood_vernikli_parlak.jpg"
+    },
+    "cubowood_dekoratif_mat": {
+        id: "cubowood_dekoratif_mat",
+        name: "Cubowood Dekoratif Mat Ahşap Koruyucu",
+        category: "Ahşap Koruyucular",
+        parentCategory: "Cubo Boya",
+        mainCategory: "Boyalar",
+        description: "Dekoratif mat ahşap koruyucu",
+        image: "./assets/Cubo/ahsap_koruyucular/cubowood_dekoratif_mat.jpg"
+    },
+    "cubowood_parke_vernigi": {
+        id: "cubowood_parke_vernigi",
+        name: "Cubowood Parke Verniği(Cam Cila)",
+        category: "Ahşap Koruyucular",
+        parentCategory: "Cubo Boya",
+        mainCategory: "Boyalar",
+        description: "Parke verniği (cam cila)",
+        image: "./assets/Cubo/ahsap_koruyucular/cubowood_parke_vernigi.jpg"
+    },
+    "cubowood_yat_vernik": {
+        id: "cubowood_yat_vernik",
+        name: "Cubowood Yat Vernik",
+        category: "Ahşap Koruyucular",
+        parentCategory: "Cubo Boya",
+        mainCategory: "Boyalar",
+        description: "Yat verniği",
+        image: "./assets/Cubo/ahsap_koruyucular/cubowood_yat_vernik.jpg"
+    },
+    "cubowood_tik_yagi": {
+        id: "cubowood_tik_yagi",
+        name: "Cubowood Tik Yağı",
+        category: "Ahşap Koruyucular",
+        parentCategory: "Cubo Boya",
+        mainCategory: "Boyalar",
+        description: "Tik yağı",
+        image: "./assets/Cubo/ahsap_koruyucular/cubowood_tik_yagi.jpg"
     }
 };
 
@@ -662,6 +754,21 @@ const categories = {
                             "cubo_dis_mekan_metalik",
                             "cubo_dis_mekan_mermer",
                             "cubo_dis_mekan_rustik"
+                        ]
+                    },
+                    "Ahşap Koruyucular": {
+                        name: "Ahşap Koruyucular",
+                        products: [
+                            "concept_lux",
+                            "cubowood_su_bazli_vernikli",
+                            "cubowood_su_bazli_dekoratif",
+                            "cubowood_su_bazli_parlak",
+                            "cubowood_su_bazli_mat",
+                            "cubowood_vernikli_parlak",
+                            "cubowood_dekoratif_mat",
+                            "cubowood_parke_vernigi",
+                            "cubowood_yat_vernik",
+                            "cubowood_tik_yagi"
                         ]
                     }
                 }

@@ -268,6 +268,13 @@ function createDropdownMenu() {
                 const url = `products.html?main=${encodeURIComponent(mainCat)}&parent=${encodeURIComponent(subCatKey)}&category=${encodeURIComponent(prodCatKey)}`;
                 a.href = url;
                 a.textContent = prodCat.name;
+                
+                // Update click handler
+                a.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    window.location.href = url;
+                });
+                
                 li.appendChild(a);
                 productList.appendChild(li);
             }
@@ -277,6 +284,24 @@ function createDropdownMenu() {
         }
         
         dropdownContent.appendChild(categorySection);
+    }
+
+    // Add hover functionality
+    const dropdown = document.querySelector('.dropdown');
+    if (dropdown) {
+        dropdown.addEventListener('mouseenter', function() {
+            const dropdownContent = this.querySelector('.dropdown-content');
+            if (dropdownContent) {
+                dropdownContent.style.display = 'block';
+            }
+        });
+        
+        dropdown.addEventListener('mouseleave', function() {
+            const dropdownContent = this.querySelector('.dropdown-content');
+            if (dropdownContent) {
+                dropdownContent.style.display = 'none';
+            }
+        });
     }
 }
 
@@ -331,7 +356,6 @@ function displayProducts() {
         });
     }
 }
-
 function createProductCard(product) {
     return `
         <a href="product-detail.html?id=${product.id}" class="product-card" data-id="${product.id}">
@@ -341,3 +365,4 @@ function createProductCard(product) {
         </a>
     `;
 }
+
