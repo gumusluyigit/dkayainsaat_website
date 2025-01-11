@@ -3,6 +3,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap');
 /* Diğer import kuralları */
 
+/* Font imports */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600&display=swap');
+
 /* Genel stiller */
 * {
     margin: 0;
@@ -77,13 +82,8 @@ html, body {
     height: 100%;
     margin: 0;
     padding: 0;
-}
-
-body {
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
-    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    overflow-x: hidden;
+    font-family: 'Open Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
 }
@@ -127,6 +127,8 @@ header {
     margin: 0;
     font-size: 24px;
     transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
 }
 
 nav ul {
@@ -143,6 +145,8 @@ nav ul li a {
     position: relative;
     padding: 5px 0;
     transition: color 0.3s ease;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 500;
 }
 
 nav ul li a::after {
@@ -252,9 +256,9 @@ form button:hover {
 }
 
 main {
+    flex: 1 0 auto;  /* This will make main take up all available space */
     margin-top: 120px;
     padding: 0;
-    flex: 1;
     display: flex;
     flex-direction: column;
     transition: margin-top 0.5s cubic-bezier(0.4, 0, 0.2, 1);
@@ -267,12 +271,13 @@ header.scrolled + main {
 }
 
 footer {
-    margin-top: auto;
-    text-align: center;
-    padding: 20px 0;
+    flex-shrink: 0;  /* Prevents footer from shrinking */
     background-color: #333;
     color: white;
+    text-align: center;
+    padding: 20px 0;
     width: 100%;
+    margin-top: auto;  /* Pushes footer to bottom */
 }
 
 .product-grid {
@@ -323,6 +328,8 @@ footer {
     line-clamp: 3;
     -webkit-box-orient: vertical;
     line-height: 1.2em;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 500;
 }
 
 .product-card .product-category {
@@ -734,16 +741,38 @@ footer {
 
 /* Ana sayfadaki ürün kartları için özel boyutlar */
 .product-grid-home .product-card {
-    height: 250px;
+    height: 350px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    position: relative;
 }
 
 .product-grid-home .product-image {
     width: 150px;
     height: 150px;
+    margin-bottom: 15px;
+    object-fit: contain;
 }
 
-.product-grid-home h3 {
-    font-size: 1em;
+.product-grid-home .product-card h3 {
+    font-size: 1.1em;
+    line-height: 1.4;
+    margin-bottom: 10px;
+    color: #333;
+    font-weight: 500;
+    flex-grow: 1;
+}
+
+.product-grid-home .product-company {
+    font-size: 0.9em;
+    color: #666;
+    font-style: italic;
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    right: 20px;
+    text-align: left;
 }
 
 .swiper-navigation {
@@ -958,5 +987,248 @@ footer {
     padding: 0 20px;
     display: flex;
     flex-direction: column;
+}
+
+/* Contact page styles */
+.contact-page {
+    padding: 40px 20px;
+}
+
+.contact-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+}
+
+.contact-info-section,
+.contact-form-section {
+    background: white;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.contact-details {
+    margin-top: 20px;
+}
+
+.contact-item {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 20px;
+    gap: 15px;
+}
+
+.contact-item i {
+    font-size: 24px;
+    color: #333;
+    width: 24px;
+}
+
+.contact-item h3 {
+    margin: 0 0 5px 0;
+    font-size: 1.1em;
+    color: #333;
+}
+
+.contact-item p {
+    margin: 0;
+    color: #666;
+    line-height: 1.5;
+}
+
+.contact-item a {
+    color: #666;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.contact-item a:hover {
+    color: #333;
+}
+
+.social-media {
+    margin-top: 30px;
+    padding-top: 20px;
+    border-top: 1px solid #eee;
+}
+
+.social-links {
+    display: flex;
+    gap: 15px;
+    margin-top: 15px;
+}
+
+.social-link {
+    width: 50px;
+    height: 50px;
+    border-radius: 12px;
+    background: #E1306C;  /* Instagram brand color */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    text-decoration: none;
+    transition: all 0.3s;
+    font-size: 24px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.social-link:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    background: #C13584;  /* Instagram gradient start color */
+}
+
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.form-group label {
+    color: #333;
+    font-weight: 500;
+}
+
+.form-group input,
+.form-group textarea {
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 1em;
+    transition: border-color 0.3s;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    border-color: #333;
+    outline: none;
+}
+
+.form-group textarea {
+    min-height: 150px;
+    resize: vertical;
+}
+
+.submit-button {
+    background: #333;
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 4px;
+    font-size: 1em;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.submit-button:hover {
+    background: #444;
+}
+
+.map-section {
+    max-width: 1200px;
+    margin: 40px auto 0;
+}
+
+.map-container {
+    margin-top: 20px;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.whatsapp-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background: #25D366;
+    color: white;
+    text-decoration: none;
+    padding: 12px 24px;
+    border-radius: 4px;
+    margin-top: 20px;
+    transition: background-color 0.3s;
+}
+
+.whatsapp-button:hover {
+    background: #128C7E;
+}
+
+.whatsapp-button i {
+    font-size: 20px;
+}
+
+@media (max-width: 768px) {
+    .contact-container {
+        grid-template-columns: 1fr;
+    }
+    
+    .contact-info-section,
+    .contact-form-section {
+        padding: 20px;
+    }
+    
+    .map-section {
+        margin-top: 30px;
+    }
+    
+    .map-container iframe {
+        height: 300px;
+    }
+}
+
+.contact-form-section h2 {
+    margin-bottom: 25px;
+}
+
+.contact-info-section h2 {
+    margin-bottom: 25px;
+}
+
+/* Index page background */
+body.home-page {
+    background: linear-gradient(rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0.7)), url('./assets/dkaya_background.jpg') center/cover no-repeat;
+    min-height: 100%;
+    position: relative;
+    z-index: 0;
+    overflow-y: auto;
+}
+
+.home-page main {
+    background: transparent;
+    text-align: center;
+    padding: 40px 20px;
+    position: relative;
+    z-index: 1;
+    min-height: calc(100vh - 180px); /* Account for header and footer */
+}
+
+.home-page main h2 {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+    font-size: 2.8em;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.home-page main p {
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 300;
+    font-size: 1.3em;
+    line-height: 1.6;
+    color: #444;
+    margin-bottom: 40px;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
 }
 

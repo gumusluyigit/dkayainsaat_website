@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>İletişim - D KAYA İNŞAAT</title>
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
     <header>
@@ -23,17 +24,95 @@
             </ul>
         </nav>
     </header>
-    <main>
-        <h2>Bize Ulaşın</h2>
-        <form action="submit_contact.php" method="post">
-            <label for="name">Adınız:</label>
-            <input type="text" id="name" name="name" required>
-            <label for="email">E-posta:</label>
-            <input type="email" id="email" name="email" required>
-            <label for="message">Mesajınız:</label>
-            <textarea id="message" name="message" required></textarea>
-            <button type="submit">Gönder</button>
-        </form>
+    <main class="contact-page">
+        <div class="contact-container">
+            <div class="contact-info-section">
+                <h2>İletişim Bilgileri</h2>
+                <div class="contact-details">
+                    <div class="contact-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <div>
+                            <h3>Adres</h3>
+                            <p>Yurt mah. 71337 Nil apt 1/A, Adana</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-phone"></i>
+                        <div>
+                            <h3>Telefon</h3>
+                            <p><a href="tel:+905324475108">0532 447 51 08</a></p>
+                            <p><a href="tel:+905347127724">0534 712 77 24</a></p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <div>
+                            <h3>E-posta</h3>
+                            <p><a href="mailto:dkaya.sarp@gmail.com">dkaya.sarp@gmail.com</a></p>
+                            <p><a href="mailto:dkaya.volkan@gmail.com">dkaya.volkan@gmail.com</a></p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-clock"></i>
+                        <div>
+                            <h3>Çalışma Saatleri</h3>
+                            <p>Pazartesi - Cumartesi: 08:30 - 18:30</p>
+                            <p>Pazar: Kapalı</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="social-media">
+                    <h3>Sosyal Medya</h3>
+                    <div class="social-links">
+                        <a href="https://www.instagram.com/dkayainsaat?igsh=MTR6aHVneGkyazZjdw%3D%3D" class="social-link" target="_blank"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                <a href="https://wa.me/905555555555" class="whatsapp-button">
+                    <i class="fab fa-whatsapp"></i> WhatsApp'tan Ulaşın
+                </a>
+            </div>
+            
+            <div class="contact-form-section">
+                <h2>Bize Mesaj Gönderin</h2>
+                <form class="contact-form" action="submit_contact.php" method="post">
+                    <div class="form-group">
+                        <label for="name">Adınız Soyadınız</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="email">E-posta Adresiniz</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="subject">Konu</label>
+                        <input type="text" id="subject" name="subject" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="message">Mesajınız</label>
+                        <textarea id="message" name="message" required></textarea>
+                    </div>
+                    
+                    <button type="submit" class="submit-button">Mesajı Gönder</button>
+                </form>
+            </div>
+        </div>
+        
+        <div class="map-section">
+            <h2>Konum</h2>
+            <div class="map-container">
+                <iframe 
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3087.1741111111113!2d34.1666666666667!3d39.1666666666667!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMznCsDEwJzAwLjAiTiAzNMKwMTAnMDAuMCJF!5e0!3m2!1str!2str!4v1620000000000!5m2!1str!2str" 
+                    width="100%" 
+                    height="450" 
+                    style="border:0;" 
+                    allowfullscreen="" 
+                    loading="lazy">
+                </iframe>
+            </div>
+        </div>
     </main>
     <footer>
         <p>&copy; 2023 D KAYA İNŞAAT</p>
