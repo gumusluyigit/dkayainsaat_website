@@ -250,6 +250,15 @@ const productsData = {
         description: "İzolasyon Boyası\n\nSu yalıtımı sağlayan, elastik yapıya sahip özel izolasyon boyasıdır.",
         image: "./assets/Termatect/izolasyon.jpg"
     },
+    "termatect_fuga_sil": {
+        id: "termatect_fuga_sil",
+        name: "2003 Fuga Sil (Silikonlu Derz Dolgu)",
+        category: "Termatect",
+        parentCategory: "Termatect",
+        mainCategory: "Yapı Kimyasalları",
+        description: "Yüksek performanslı, silikonlu, 1 - 6 mm derz aralığı için uygun, iç ve dış mekanlarda, havuz - banyo gibi ıslak hacimlerde kullanılabilen, çimento esaslı derz dolgu malzemesidir.\n\n<div class='color-palette'>\n<div class='color-box' style='background-color: #FFFFFF;' title='Beyaz'></div>\n<div class='color-box' style='background-color: #faf4d8;' title='Bahama Bej'></div>\n<div class='color-box' style='background-color: #c1c3c4;' title='Açık Gri'></div>\n<div class='color-box' style='background-color: #faf1d9;' title=' Fildişi'></div>\n<div class='color-box' style='background-color: #fce6f3;' title=' Açık Pembe'></div>\n<div class='color-box' style='background-color: #f5deb5;' title='Krem'></div>\n<div class='color-box' style='background-color: #e6ddd4;' title='Jasmin'></div>\n<div class='color-box' style='background-color: #48b8df;' title='Havuz Mavi'></div>\n<div class='color-box' style='background-color: #eadcbd;' title='İstanbul Bej'></div>\n<div class='color-box' style='background-color: #f4b4d5;' title='Pembe'></div>\n<div class='color-box' style='background-color: #fee1a6;' title='Yörük Bej'></div>\n<div class='color-box' style='background-color: #dfc99a;' title=' Kese Kağıdı'></div>\n<div class='color-box' style='background-color: #969898;' title='Gri'></div>\n<div class='color-box' style='background-color: #d4c4aa;' title='Kapadokya Bej'></div>\n<div class='color-box' style='background-color: #c2e4f6;' title=' Atlas Mavi'></div>\n<div class='color-box' style='background-color: #8a6857;' title='Kahve'></div>\n<div class='color-box' style='background-color: #602e23;' title='Koyu Kahve'></div>\n<div class='color-box' style='background-color: #835853;' title='Kızıl Kahve'></div>\n<div class='color-box' style='background-color: #4c4d4d;' title=' Antrasit'></div>\n<div class='color-box' style='background-color: #090a0b;' title='Siyah'></div>\n</div>\n\n<br><br><small><i>- Yukarıdaki baskı renkleri üretimimize en yakın renklerden seçilmiştir.<br>- Özel renkler için üretimimiz 500 kg ve üzerindeki renklerdedir.<br>- Tüm renkler için 5 kg ve 20 kg seçenekleri mevcuttur.</i></small>",
+        image: "./assets/Termatect/fuga_sil.jpg"
+    },
 
     // Cubo Boya ürünleri
     "cubo_ic_mekan_maestro_extent_tam_mat": {
@@ -782,7 +791,8 @@ const categories = {
                         products: [
                             "termatect_ic_cephe",
                             "termatect_dis_cephe",
-                            "termatect_izolasyon"
+                            "termatect_izolasyon",
+                            "termatect_fuga_sil"
                         ]
                     }
                 }

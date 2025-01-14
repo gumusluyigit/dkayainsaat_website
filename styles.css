@@ -1321,3 +1321,42 @@ nav ul {
     margin-top: 30px; /* Space between subtitle and products */
 }
 
+.color-palette {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    padding: 15px;
+    background-color: #f5f5f5;
+    border-radius: 8px;
+    margin: 15px 0;
+}
+
+.color-box {
+    width: 30px;
+    height: 30px;
+    border-radius: 4px;
+    border: 1px solid #ddd;
+    cursor: pointer;
+    position: relative;
+}
+
+.color-box:hover::after {
+    content: attr(title);
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 4px 8px;
+    background-color: rgba(0, 0, 0, 0.8);
+    color: white;
+    font-size: 12px;
+    border-radius: 4px;
+    white-space: nowrap;
+    z-index: 1000;
+}
+
+/* Add border to white color box for visibility */
+.color-box[style*="background-color: #FFFFFF"] {
+    border: 1px solid #ccc;
+}
+
