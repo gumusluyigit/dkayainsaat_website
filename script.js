@@ -1,3 +1,24 @@
+// Add this function at the top level
+function scrollToSection(sectionId) {
+    console.log('Attempting to scroll to section:', sectionId);  // Debug log
+    requestAnimationFrame(() => {
+        const targetSection = document.getElementById(sectionId);
+        if (targetSection) {
+            console.log('Found section:', targetSection);  // Debug log
+            const headerHeight = document.querySelector('header').offsetHeight;
+            const sectionTop = targetSection.getBoundingClientRect().top + window.pageYOffset;
+            const scrollPosition = sectionTop - headerHeight - 20;
+            console.log('Calculated scroll position:', scrollPosition);  // Debug log
+            window.scrollTo({
+                top: scrollPosition,
+                behavior: 'smooth'
+            });
+        } else {
+            console.warn('Section not found:', sectionId);  // Debug log
+        }
+    });
+}
+
 // Initialize all functionality when DOM is loaded
 document.addEventListener("DOMContentLoaded", function() {
     // Header scroll effect
@@ -16,6 +37,39 @@ document.addEventListener("DOMContentLoaded", function() {
             header.classList.remove('scrolled');
         }
     });
+
+    // Add hash change listener
+    window.addEventListener('hashchange', function() {
+        if (window.location.pathname.endsWith('products.html')) {
+            const targetId = decodeURIComponent(window.location.hash.slice(1));
+            console.log('Hash changed, target ID:', targetId);  // Debug log
+            if (targetId) {
+                scrollToSection(targetId);
+            }
+        }
+    });
+
+    // Handle initial hash on page load
+    if (window.location.hash && window.location.pathname.endsWith('products.html')) {
+        setTimeout(() => {
+            const targetId = decodeURIComponent(window.location.hash.slice(1));
+            console.log('Initial page load, target ID:', targetId);  // Debug log
+            if (targetId) {
+                scrollToSection(targetId);
+            }
+        }, 300);
+    }
+
+    // Remove the click handler for Ürünler nav button since we want it to work normally
+    const productsButton = document.querySelector('.dropdown > a');
+    if (productsButton) {
+        productsButton.addEventListener('click', function(e) {
+            // Only prevent default if we're already on products.html
+            if (window.location.pathname.endsWith('products.html')) {
+                e.preventDefault();
+            }
+        });
+    }
 
     // Create dropdown menu
     createDropdownMenu();
@@ -293,41 +347,36 @@ function createDropdownMenu() {
             mainCategories[mainCat][parentCat].forEach(category => {
                 const li = document.createElement('li');
                 const a = document.createElement('a');
-                a.href = `products.html#${mainCat}`;
+                // Link to main category instead of subcategory
+                a.href = `products.html#${encodeURIComponent(mainCat)}`;
                 a.textContent = category;
                 
                 a.addEventListener('click', function(e) {
-                    e.preventDefault();
+                    const currentPath = window.location.pathname;
+                    console.log('Dropdown link clicked, current path:', currentPath);
+                    console.log('Target category:', category);
                     
-                    // If we're not on products.html, navigate there with the hash
-                    if (!window.location.pathname.endsWith('products.html')) {
-                        window.location.href = `products.html#${mainCat}`;
+                    if (!currentPath.endsWith('products.html')) {
+                        // Let the default navigation happen
                         return;
                     }
                     
-                    // If we are on products.html, scroll to the section
-                    const targetSection = document.getElementById(mainCat);
+                    // If we're already on products.html
+                    e.preventDefault();
+                    const targetSection = document.getElementById(category);
                     if (targetSection) {
-                        // Calculate header height for offset
-                        const headerHeight = document.querySelector('header').offsetHeight;
-                        
-                        // First scroll to the main category section
-                        targetSection.scrollIntoView();
-                        window.scrollBy(0, -headerHeight - 20); // Adjust for header height
-                        
-                        // Then try to find and scroll to the specific category
-                        setTimeout(() => {
-                            const categoryHeading = Array.from(targetSection.querySelectorAll('h3'))
-                                .find(h3 => h3.textContent === category);
-                            
-                            if (categoryHeading) {
-                                categoryHeading.scrollIntoView();
-                                window.scrollBy(0, -headerHeight - 20); // Adjust for header height
-                            }
-                            
-                            // Close dropdown
-                            dropdownContent.style.display = 'none';
-                        }, 100); // Small delay to ensure content is loaded
+                        // Update URL hash first
+                        history.pushState(null, null, `#${encodeURIComponent(category)}`);
+                        // Then scroll to subcategory
+                        console.log('Scrolling to section:', category);
+                        scrollToSection(category);
+                    } else {
+                        // If subcategory section not found, scroll to main category
+                        const mainSection = document.getElementById(mainCat);
+                        if (mainSection) {
+                            history.pushState(null, null, `#${encodeURIComponent(mainCat)}`);
+                            scrollToSection(mainCat);
+                        }
                     }
                 });
                 
@@ -356,52 +405,43 @@ function createDropdownMenu() {
 }
 
 function displayProducts() {
-    // Get all main category sections
-    const mainCategories = {
-        "Alçılar": [],
-        "Boyalar": [],
-        "Yapı Kimyasalları": [],
-        "Asma Tavan": []
-    };
-
-    // Group products by main category and category
+    // Group products by main category and subcategory
+    const categories = {};
+    
     for (const productId in productsData) {
         const product = productsData[productId];
-        if (mainCategories.hasOwnProperty(product.mainCategory)) {
-            mainCategories[product.mainCategory].push(product);
+        const mainCategory = product.mainCategory;
+        let category = product.category;
+        
+        // Special handling for Asma Tavan products
+        if (mainCategory === "Asma Tavan") {
+            category = "Asma Tavan Ürünleri";
         }
+        
+        if (!categories[mainCategory]) {
+            categories[mainCategory] = {};
+        }
+        if (!categories[mainCategory][category]) {
+            categories[mainCategory][category] = [];
+        }
+        categories[mainCategory][category].push(product);
     }
 
-    // Display products in each section
-    for (const categoryName in mainCategories) {
-        const section = document.getElementById(categoryName);
-        if (section) {
-            const products = mainCategories[categoryName];
-            
-            // Group products by category
-            const categorizedProducts = {};
-            products.forEach(product => {
-                if (!categorizedProducts[product.category]) {
-                    categorizedProducts[product.category] = [];
+    // Display products in each subcategory
+    for (const mainCategory in categories) {
+        const mainCategorySection = document.getElementById(mainCategory);
+        if (mainCategorySection) {
+            for (const subcategory in categories[mainCategory]) {
+                const subcategoryContainer = document.getElementById(subcategory);
+                if (subcategoryContainer) {
+                    const productGrid = subcategoryContainer.querySelector('.product-grid');
+                    if (productGrid) {
+                        productGrid.innerHTML = categories[mainCategory][subcategory]
+                            .map(product => createProductCard(product))
+                            .join('');
+                    }
                 }
-                categorizedProducts[product.category].push(product);
-            });
-
-            let sectionHTML = '';
-            // Add main category title
-            sectionHTML += `<div class="title-container"><h2>${categoryName}</h2></div>`;
-            
-            // Add each category and its products
-            for (const category in categorizedProducts) {
-                sectionHTML += `<div class="title-container"><h3>${category}</h3></div>`;
-                sectionHTML += '<div class="product-grid">';
-                sectionHTML += categorizedProducts[category]
-                    .map(product => createProductCard(product))
-                    .join('');
-                sectionHTML += '</div>';
             }
-            
-            section.innerHTML = sectionHTML;
         }
     }
 }

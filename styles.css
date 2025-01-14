@@ -15,12 +15,58 @@
     box-sizing: border-box;
 }
 
+body {
+    overflow-y: scroll; /* Always show scrollbar */
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    background-color: #fff;
+}
+
 /* Kategori stilleri */
 .category-section {
     margin: 0;
-    padding: 0;
+    padding: 20px 0;
     width: 100%;
     background-color: white; /* Default background */
+}
+
+.category-section h2 {
+    text-align: left;
+    margin: 20px;
+    padding-left: 20px;
+    color: #333;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    max-width: 1200px;
+    margin: 20px auto;
+    font-size: 2.5rem;
+    border-bottom: 3px solid #000000;
+    padding-bottom: 10px;
+    margin-bottom: 30px;
+}
+
+.subcategory-container {
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 0 20px;
+    width: 100%;
+}
+
+.subcategory-container h3 {
+    text-align: left;
+    margin: 15px 0;
+    padding-left: 20px;
+    color: #444;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 500;
+    font-size: 1.8rem;
+    border-bottom: 2px solid #000000;
+    padding-bottom: 8px;
+    margin-bottom: 25px;
+    width: fit-content;
 }
 
 /* Specific category backgrounds */
@@ -70,9 +116,9 @@
     grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
     gap: 20px;
     max-width: 1200px;
-    width: calc(100% - 40px);
+    width: 100%;
     margin: 0 auto;
-    padding: 0 0 40px 0;
+    padding: 0 20px;
     background: transparent;
 }
 
@@ -92,14 +138,14 @@ header {
     position: fixed;
     top: 0;
     left: 0;
-    right: 0;
+    right: 17px; /* Leave space for scrollbar */
     z-index: 1000;
     background-color: #333;
-    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    transition: all 0.3s ease;
     display: flex;
     align-items: center;
-    padding: 20px;
-    height: 120px;
+    padding: 0 20px;
+    height: 100px;
 }
 
 .header-left {
@@ -114,69 +160,89 @@ header {
 }
 
 .logo {
-    width: 80px;
-    height: auto;
-    margin-right: 15px;
+    height: 100px;
+    width: 480px;
+    margin-right: 0;
     opacity: 1;
     transform: scale(1);
-    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    transition: all 0.3s ease;
+    object-fit: contain;
 }
 
 .site-title {
-    color: white;
-    margin: 0;
-    font-size: 24px;
-    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
-    font-family: 'Montserrat', sans-serif;
-    font-weight: 600;
+    display: none; /* Hide the text title since we're using the logo with text */
 }
 
-nav ul {
-    list-style: none;
-    margin: 0;
-    padding: 0;
+nav {
+    margin-left: auto;
+    height: 100%;
     display: flex;
-    gap: 20px;
+    align-items: center;
 }
 
-nav ul li a {
+.nav-menu {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    gap: 30px;
+    height: 100%;
+}
+
+.nav-menu li {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    padding: 0 10px;
+}
+
+.nav-menu li a {
     color: white;
     text-decoration: none;
     position: relative;
-    padding: 5px 0;
+    padding: 8px 0;
     transition: color 0.3s ease;
     font-family: 'Poppins', sans-serif;
     font-weight: 500;
 }
 
-nav ul li a::after {
+.nav-menu li a::after {
     content: '';
     position: absolute;
     width: 0;
     height: 2px;
-    bottom: 0;
+    bottom: -4px;
     left: 0;
     background-color: white;
     transition: width 0.3s ease;
 }
 
-nav ul li a:hover {
-    color: #FFE5B4;  /* Light peachy color to match your theme */
+.nav-menu li a:hover {
+    color: #FFE5B4;
 }
 
-nav ul li a:hover::after {
+.nav-menu li a:hover::after {
     width: 100%;
 }
 
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    gap: 30px;
+    height: 100%;
+}
+
 header.scrolled {
-    padding: 10px 20px;
-    height: 60px;  /* Fixed height for scrolled state */
+    padding: 0 20px;
+    height: 80px;
 }
 
 header.scrolled .logo {
-    opacity: 0;
-    transform: scale(0.8);
-    width: 0;
+    height: 60px;
+    width: 240px;
+    opacity: 1;
     margin: 0;
 }
 
@@ -188,30 +254,6 @@ header.scrolled .site-title {
     margin: 0 20px; /* Add margin to the title for spacing */
     font-size: 24px; /* Adjust font size as needed */
     color: white; /* Ensure the title is visible */
-}
-.logo {
-    width: 80px; /* Adjust the size as needed */
-    height: auto;
-}
-
-nav {
-    margin-left: auto; /* Push the navigation to the right */
-}
-
-nav ul {
-    list-style-type: none;
-    padding: 0;
-    margin: 0; /* Remove default margin */
-}
-
-nav ul li {
-    display: inline;
-    margin: 0 15px;
-}
-
-nav ul li a {
-    color: white;
-    text-decoration: none;
 }
 
 form {
@@ -256,28 +298,25 @@ form button:hover {
 }
 
 main {
-    flex: 1 0 auto;  /* This will make main take up all available space */
-    margin-top: 120px;
-    padding: 0;
-    display: flex;
-    flex-direction: column;
-    transition: margin-top 0.5s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-/* When header is scrolled, adjust main's margin */
-header.scrolled + main {
-    margin-top: 60px;
-    padding: 0;
+    padding-top: 100px; /* Match header height */
+    flex: 1;
+    background-color: #fff;
 }
 
 footer {
-    flex-shrink: 0;  /* Prevents footer from shrinking */
     background-color: #333;
     color: white;
     text-align: center;
     padding: 20px 0;
     width: 100%;
-    margin-top: auto;  /* Pushes footer to bottom */
+    margin-top: auto;
+}
+
+.products-container {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
 }
 
 .product-grid {
@@ -565,17 +604,11 @@ footer {
 }
 
 /* Dropdown menü stilleri */
-.nav-menu {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    display: flex;
-    gap: 20px;
-}
-
 .dropdown {
     position: relative;
-    padding-bottom: 20px; /* Add padding to create a hover bridge */
+    height: 100%;
+    display: flex;
+    align-items: center;
 }
 
 .dropdown-content {
@@ -586,8 +619,8 @@ footer {
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
     z-index: 1;
     padding: 10px 0;
-    top: calc(100% - 20px); /* Adjust to overlap with the padding */
-    margin-top: 0; /* Remove margin since we're using padding */
+    top: 100%;
+    left: 0;
 }
 
 /* Add a small triangle pointer */
@@ -626,8 +659,8 @@ footer {
 }
 
 .category-section {
-    margin: 10px 0;
-    padding: 0 10px;
+    margin: 5px 0;
+    padding: 5px 15px;
 }
 
 .category-section h3 {
@@ -639,10 +672,8 @@ footer {
 }
 
 .subcategory-section {
-    margin-left: 15px;  /* Alt kategoriler için girinti */
-    margin-bottom: 8px;  /* Alt kategoriler arası boşluk */
-    display: flex;
-    flex-direction: column;  /* Alt kategorileri dikey olarak sırala */
+    margin-left: 10px;
+    margin-top: 5px;
 }
 
 .subcategory-section h4 {
@@ -873,6 +904,7 @@ footer {
     padding: 0;
     display: flex;
     flex-direction: column;
+    padding-bottom: 60px; /* Adjust based on footer height */
 }
 
 /* Remove any margin between sections */
@@ -1230,5 +1262,48 @@ body.home-page {
     max-width: 800px;
     margin-left: auto;
     margin-right: auto;
+}
+
+nav {
+    margin-left: auto;
+    height: 100%; /* Take full height of header */
+    display: flex;
+    align-items: center;
+}
+
+nav ul {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    margin: 0;
+    padding: 0;
+}
+
+.dropdown-content a {
+    color: #333 !important;  /* Override the white color */
+    text-decoration: none;
+    padding: 4px 15px;
+    display: block;
+}
+
+.dropdown-content a:hover {
+    color: #000 !important;  /* Darker color on hover */
+    background-color: #f0f0f0;
+}
+
+/* Ensure all category sections have consistent width and padding */
+.category-section {
+    margin: 0;
+    padding: 20px 0;
+    width: 100%;
+}
+
+.category-section > .product-grid,
+.subcategory-container > .product-grid {
+    max-width: 1200px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 20px;
 }
 

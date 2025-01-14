@@ -8,41 +8,68 @@
 </head>
 <body>
     <header>
-        <a href="./index.html"><img src="./assets/dkayainsaat_logo.jpg" alt="D KAYA İNŞAAT Logo" class="logo"></a>
-        <h1 class="site-title">D KAYA İNŞAAT</h1>
-        <nav>
-            <ul class="nav-menu">
-                <li><a href="./index.html">Ana Sayfa</a></li>
-                <li class="dropdown">
-                    <a href="./products.html">Ürünler</a>
-                    <div class="dropdown-content">
-                        <!-- Kategoriler JavaScript ile doldurulacak -->
-                    </div>
-                </li>
-                <li><a href="./contact.html">İletişim</a></li>
-            </ul>
-        </nav>
+        <div class="header-left">
+            <img src="./assets/dkaya_logo.jpg" alt="D KAYA İNŞAAT Logo" class="logo">
+        </div>
+        <div class="header-right">
+            <nav>
+                <ul class="nav-menu">
+                    <li><a href="./index.html">Ana Sayfa</a></li>
+                    <li class="dropdown">
+                        <a href="./products.html">Ürünler</a>
+                        <div class="dropdown-content">
+                            <!-- Kategoriler JavaScript ile doldurulacak -->
+                        </div>
+                    </li>
+                    <li><a href="./contact.html">İletişim</a></li>
+                </ul>
+            </nav>
+        </div>
     </header>
     <main>
         <div class="products-container">
             <section class="category-section" id="Alçılar">
                 <h2>Alçılar</h2>
-                <div class="product-grid"></div>
+                <div id="Alçı Plakalar" class="subcategory-container">
+                    <h3>Alçı Plakalar</h3>
+                    <div class="product-grid"></div>
+                </div>
+                <div id="Toz Alçılar" class="subcategory-container">
+                    <h3>Toz Alçılar</h3>
+                    <div class="product-grid"></div>
+                </div>
             </section>
             
             <section class="category-section" id="Boyalar">
                 <h2>Boyalar</h2>
-                <div class="product-grid"></div>
+                <div id="İç Mekan Boyaları" class="subcategory-container">
+                    <h3>İç Mekan Boyaları</h3>
+                    <div class="product-grid"></div>
+                </div>
+                <div id="Dış Mekan Boyaları" class="subcategory-container">
+                    <h3>Dış Mekan Boyaları</h3>
+                    <div class="product-grid"></div>
+                </div>
+                <div id="Ahşap Koruyucular" class="subcategory-container">
+                    <h3>Ahşap Koruyucular</h3>
+                    <div class="product-grid"></div>
+                </div>
             </section>
             
             <section class="category-section" id="Yapı Kimyasalları">
                 <h2>Yapı Kimyasalları</h2>
-                <div class="product-grid"></div>
+                <div id="Termatect" class="subcategory-container">
+                    <h3>Termatect</h3>
+                    <div class="product-grid"></div>
+                </div>
             </section>
             
             <section class="category-section" id="Asma Tavan">
                 <h2>Asma Tavan</h2>
-                <div class="product-grid"></div>
+                <div id="Asma Tavan Ürünleri" class="subcategory-container">
+                    <h3>Asma Tavan Ürünleri</h3>
+                    <div class="product-grid"></div>
+                </div>
             </section>
         </div>
     </main>

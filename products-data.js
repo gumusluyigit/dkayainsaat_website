@@ -671,7 +671,7 @@ const productsData = {
     "tas_yunu_asma_tavan": {
         id: "tas_yunu_asma_tavan",
         name: "Taş Yünü Asma Tavan",
-        category: "Asma Tavan",
+        category: "Asma Tavan Ürünleri",
         parentCategory: "Laçin Yapı",
         mainCategory: "Asma Tavan",
         description: "Prosista Taşyünü Asma Tavan Panelleri: Taşyünü Asma Tavan sistemler modüler tavanda hemen hemen en eski üründür. Akustik değeri, nem direnci, yangın dayanımı, ışık yansıtma değerleri ve kenar çeşitleri bakımından birçok seçeneği ekonomik olarak sunan bir tavan panelidir.",
@@ -680,7 +680,7 @@ const productsData = {
     "karopan_asma_tavan": {
         id: "karopan_asma_tavan",
         name: "Karopan Asma Tavan",
-        category: "Asma Tavan",
+        category: "Asma Tavan Ürünleri",
         parentCategory: "Laçin Yapı",
         mainCategory: "Asma Tavan",
         description: "Karopan asma tavanlarda T-15, T-24, ve T-24 kanallı taşıyıcı sistemleri ile dekoratif asma tavan görünümü elde edilebilir. Bu sistem uygulama hızı ve kolay montaj imkanı sağlar.",
@@ -689,7 +689,7 @@ const productsData = {
     "baffle_asma_tavan": {
         id: "baffle_asma_tavan",
         name: "Baffle Asma Tavan",
-        category: "Asma Tavan",
+        category: "Asma Tavan Ürünleri",
         parentCategory: "Laçin Yapı",
         mainCategory: "Asma Tavan",
         description: "Bafﬂe Tavanlar, özel taşıyıcılarına dikey olarak montaj yapılan doğrusal panellerden oluşur. Yan duvarlardan bağımsız olarak sadece taşıyıcı sistem ile montaj yapılarak yüzer bir tavan uygulaması da elde edilebilir. Bafﬂe tavanlar, mekanın hacmini daraltmadan dekoratif bir görünüm kazandırır.",
