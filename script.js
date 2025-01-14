@@ -1,22 +1,26 @@
 // Add this function at the top level
 function scrollToSection(sectionId) {
-    console.log('Attempting to scroll to section:', sectionId);  // Debug log
-    requestAnimationFrame(() => {
-        const targetSection = document.getElementById(sectionId);
-        if (targetSection) {
-            console.log('Found section:', targetSection);  // Debug log
-            const headerHeight = document.querySelector('header').offsetHeight;
-            const sectionTop = targetSection.getBoundingClientRect().top + window.pageYOffset;
-            const scrollPosition = sectionTop - headerHeight - 20;
-            console.log('Calculated scroll position:', scrollPosition);  // Debug log
+    console.log('Attempting to scroll to section:', sectionId);
+    const targetSection = document.getElementById(sectionId);
+    if (targetSection) {
+        console.log('Found section:', targetSection);
+        const headerHeight = document.querySelector('header').offsetHeight;
+        const targetPosition = targetSection.offsetTop - headerHeight - 150;
+        console.log('Calculated scroll position:', targetPosition);
+        
+        // Try using scrollIntoView first
+        targetSection.scrollIntoView({ behavior: 'smooth' });
+        
+        // Then adjust for header with more padding
+        setTimeout(() => {
             window.scrollTo({
-                top: scrollPosition,
+                top: targetPosition,
                 behavior: 'smooth'
             });
-        } else {
-            console.warn('Section not found:', sectionId);  // Debug log
-        }
-    });
+        }, 100);
+    } else {
+        console.warn('Section not found:', sectionId);
+    }
 }
 
 // Initialize all functionality when DOM is loaded
