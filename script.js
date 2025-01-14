@@ -106,7 +106,7 @@ document.addEventListener("DOMContentLoaded", function() {
         if (product) {
             // Update page content with product data
             document.getElementById('product-name').innerText = product.name;
-            document.getElementById('product-description').innerText = product.description;
+            document.getElementById('product-description').innerHTML = product.description;
             
             // Set image source and handle loading
             const productImage = document.getElementById('product-image');
@@ -415,11 +415,11 @@ function displayProducts() {
     for (const productId in productsData) {
         const product = productsData[productId];
         const mainCategory = product.mainCategory;
-        let category = product.category;
+        const category = product.category;
         
-        // Special handling for Asma Tavan products
-        if (mainCategory === "Asma Tavan") {
-            category = "Asma Tavan Ürünleri";
+        // Special handling for Asma Tavan products - merge both categories
+        if (mainCategory === "Asma Tavan" && category === "Asma Tavan") {
+            product.category = "Asma Tavan Ürünleri";
         }
         
         if (!categories[mainCategory]) {
@@ -429,6 +429,11 @@ function displayProducts() {
             categories[mainCategory][category] = [];
         }
         categories[mainCategory][category].push(product);
+        
+        // Debug log for Termatect products
+        if (category === "Termatect") {
+            console.log("Found Termatect product:", product.name);
+        }
     }
 
     // Display products in each subcategory
@@ -437,6 +442,11 @@ function displayProducts() {
         if (mainCategorySection) {
             for (const subcategory in categories[mainCategory]) {
                 const subcategoryContainer = document.getElementById(subcategory);
+                // Debug log for Termatect container
+                if (subcategory === "Termatect") {
+                    console.log("Looking for Termatect container:", subcategory);
+                    console.log("Container found:", !!subcategoryContainer);
+                }
                 if (subcategoryContainer) {
                     const productGrid = subcategoryContainer.querySelector('.product-grid');
                     if (productGrid) {
