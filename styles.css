@@ -342,7 +342,7 @@ footer {
     color: inherit;
     display: flex;
     flex-direction: column;
-    height: 380px;
+    height: 400px;
     position: relative;
 }
 
@@ -353,7 +353,7 @@ footer {
 
 .product-card img {
     width: 100%;
-    height: 200px;
+    height: 220px;
     object-fit: contain;
     margin-bottom: 15px;
     display: block;
@@ -362,22 +362,19 @@ footer {
 }
 
 .product-card h3 {
-    font-size: 1.1em;
+    font-size: 1rem;
     color: #333;
     margin: 0;
     padding: 0;
-    height: 3.6em;
+    height: 4.8em;
     overflow: hidden;
     display: -webkit-box;
-    display: -moz-box;
-    display: box;
-    -webkit-line-clamp: 3;
-    -moz-line-clamp: 3;
-    line-clamp: 3;
+    -webkit-line-clamp: 4;
     -webkit-box-orient: vertical;
     line-height: 1.2em;
     font-family: 'Poppins', sans-serif;
     font-weight: 500;
+    text-overflow: ellipsis;
 }
 
 .product-card .product-category {
@@ -1038,10 +1035,10 @@ footer {
 
 /* Contact page styles */
 .contact-page {
+    padding-top: 120px; /* Increased padding to account for header height */
     flex: 1;
     display: flex;
     flex-direction: column;
-    padding-top: 20px;
     background-color: #fff;
     position: relative;
     z-index: 1;
@@ -1055,6 +1052,8 @@ footer {
     grid-template-columns: 1fr 1fr;
     gap: 40px;
     width: 100%;
+    position: relative;
+    z-index: 1;
 }
 
 .contact-info-section,
@@ -1063,6 +1062,8 @@ footer {
     padding: 30px;
     border-radius: 8px;
     box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    position: relative;
+    z-index: 1;
 }
 
 .contact-details {
@@ -1194,6 +1195,8 @@ footer {
     padding: 0 20px;
     max-width: 1200px;
     margin: 40px auto;
+    position: relative;
+    z-index: 1;
 }
 
 .map-section h2 {

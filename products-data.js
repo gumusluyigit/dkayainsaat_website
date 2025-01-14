@@ -223,41 +223,79 @@ const productsData = {
     },
 
     // Termatect ürünleri
-    "termatect_ic_cephe": {
-        id: "termatect_ic_cephe",
-        name: "Termatect İç Cephe Boyası",
-        category: "Termatect",
-        parentCategory: "Termatect",
-        mainCategory: "Yapı Kimyasalları",
-        description: "İç Cephe Boyası\n\nYüksek örtücülüğe sahip, su bazlı, mat görünümlü iç cephe boyasıdır.",
-        image: "./assets/Termatect/ic_cephe.jpg"
-    },
-    "termatect_dis_cephe": {
-        id: "termatect_dis_cephe",
-        name: "Termatect Dış Cephe Boyası",
-        category: "Termatect",
-        parentCategory: "Termatect",
-        mainCategory: "Yapı Kimyasalları",
-        description: "Dış Cephe Boyası\n\nSu bazlı, mat görünümlü, yüksek dayanıklılığa sahip dış cephe boyasıdır.",
-        image: "./assets/Termatect/dis_cephe.jpg"
-    },
-    "termatect_izolasyon": {
-        id: "termatect_izolasyon",
-        name: "Termatect İzolasyon Boyası",
-        category: "Termatect",
-        parentCategory: "Termatect",
-        mainCategory: "Yapı Kimyasalları",
-        description: "İzolasyon Boyası\n\nSu yalıtımı sağlayan, elastik yapıya sahip özel izolasyon boyasıdır.",
-        image: "./assets/Termatect/izolasyon.jpg"
-    },
     "termatect_fuga_sil": {
         id: "termatect_fuga_sil",
         name: "2003 Fuga Sil (Silikonlu Derz Dolgu)",
-        category: "Termatect",
+        category: "Derz Dolgular",
         parentCategory: "Termatect",
         mainCategory: "Yapı Kimyasalları",
         description: "Yüksek performanslı, silikonlu, 1 - 6 mm derz aralığı için uygun, iç ve dış mekanlarda, havuz - banyo gibi ıslak hacimlerde kullanılabilen, çimento esaslı derz dolgu malzemesidir.\n\n<div class='color-palette'>\n<div class='color-box' style='background-color: #FFFFFF;' title='Beyaz'></div>\n<div class='color-box' style='background-color: #faf4d8;' title='Bahama Bej'></div>\n<div class='color-box' style='background-color: #c1c3c4;' title='Açık Gri'></div>\n<div class='color-box' style='background-color: #faf1d9;' title=' Fildişi'></div>\n<div class='color-box' style='background-color: #fce6f3;' title=' Açık Pembe'></div>\n<div class='color-box' style='background-color: #f5deb5;' title='Krem'></div>\n<div class='color-box' style='background-color: #e6ddd4;' title='Jasmin'></div>\n<div class='color-box' style='background-color: #48b8df;' title='Havuz Mavi'></div>\n<div class='color-box' style='background-color: #eadcbd;' title='İstanbul Bej'></div>\n<div class='color-box' style='background-color: #f4b4d5;' title='Pembe'></div>\n<div class='color-box' style='background-color: #fee1a6;' title='Yörük Bej'></div>\n<div class='color-box' style='background-color: #dfc99a;' title=' Kese Kağıdı'></div>\n<div class='color-box' style='background-color: #969898;' title='Gri'></div>\n<div class='color-box' style='background-color: #d4c4aa;' title='Kapadokya Bej'></div>\n<div class='color-box' style='background-color: #c2e4f6;' title=' Atlas Mavi'></div>\n<div class='color-box' style='background-color: #8a6857;' title='Kahve'></div>\n<div class='color-box' style='background-color: #602e23;' title='Koyu Kahve'></div>\n<div class='color-box' style='background-color: #835853;' title='Kızıl Kahve'></div>\n<div class='color-box' style='background-color: #4c4d4d;' title=' Antrasit'></div>\n<div class='color-box' style='background-color: #090a0b;' title='Siyah'></div>\n</div>\n\n<br><br><small><i>- Yukarıdaki baskı renkleri üretimimize en yakın renklerden seçilmiştir.<br>- Özel renkler için üretimimiz 500 kg ve üzerindeki renklerdedir.<br>- Tüm renkler için 5 kg ve 20 kg seçenekleri mevcuttur.</i></small>",
         image: "./assets/Termatect/fuga_sil.jpg"
+    },
+    "termatect_1001_super": {
+        id: "termatect_1001_super",
+        name: "1001 SÜPER (Fayans & Seramik Yapıştırıcısı)",
+        category: "Standart Yapıştırıcılar",
+        parentCategory: "Termatect",
+        mainCategory: "Yapı Kimyasalları",
+        description: "Kayma özelliği azaltılmış, çimento esaslı, küçük ve orta boyutlu fayans ve seramik yapıştırma harcıdır.\n\n<div class='color-palette'>\n<div class='color-box' style='background-color: #FFFFFF;' title='Beyaz'></div>\n<div class='color-box' style='background-color: #969898;' title='Gri'></div>\n</div>",
+        image: "./assets/Termatect/1001_super.jpg"
+    },
+    "termatect_1002_extra": {
+        id: "termatect_1002_extra",
+        name: "1002 EXTRA (Fayans & Seramik Yapıştırıcısı)",
+        category: "Standart Yapıştırıcılar",
+        parentCategory: "Termatect",
+        mainCategory: "Yapı Kimyasalları",
+        description: "Kayma özelliği azaltılmış, uzun çalışma süresine sahip, çimento esaslı, küçük ve orta boyutlu fayans ve seramik yapıştırma harcıdır.\n\n<div class='color-palette'>\n<div class='color-box' style='background-color: #FFFFFF;' title='Beyaz'></div>\n<div class='color-box' style='background-color: #969898;' title='Gri'></div>\n</div>",
+        image: "./assets/Termatect/1002_extra.jpg"
+    },
+
+    // Teknik Yapıştırıcılar products
+    "termatect_1011_profesyonel": {
+        id: "termatect_1011_profesyonel",
+        name: "1011 PROFESYONEL (Granit Yapıştırıcısı)",
+        category: "Teknik Yapıştırıcılar",
+        parentCategory: "Termatect",
+        mainCategory: "Yapı Kimyasalları",
+        description: "Yüksek performanslı, uzun çalışma süresine sahip, çimento esaslı, zemin ve duvar için granit yapıştırma harcıdır.\n\n<div class='color-palette'>\n<div class='color-box' style='background-color: #FFFFFF;' title='Beyaz'></div>\n<div class='color-box' style='background-color: #969898;' title='Gri'></div>\n</div>",
+        image: "./assets/Termatect/1011_profesyonel.jpg"
+    },
+    "termatect_1012_granifix": {
+        id: "termatect_1012_granifix",
+        name: "1012 GRANİFİX (Granit Yapıştırıcısı)",
+        category: "Teknik Yapıştırıcılar",
+        parentCategory: "Termatect",
+        mainCategory: "Yapı Kimyasalları",
+        description: "Yüksek performanslı, uzun çalışma süresine sahip, kayma özelliği azaltılmış, çimento esaslı, zemin ve duvar granit yapıştırma harcıdır.\n\n<div class='color-palette'>\n<div class='color-box' style='background-color: #FFFFFF;' title='Beyaz'></div>\n<div class='color-box' style='background-color: #969898;' title='Gri'></div>\n</div>",
+        image: "./assets/Termatect/1012_granifix.jpg"
+    },
+    "termatect_1013_flex_mortar": {
+        id: "termatect_1013_flex_mortar",
+        name: "1013 FLEX MORTAR (Flex Granit Yapıştırıcısı)",
+        category: "Teknik Yapıştırıcılar",
+        parentCategory: "Termatect",
+        mainCategory: "Yapı Kimyasalları",
+        description: "Yüksek performanslı, kayma özelliği azaltılmış, uzun çalışma süresine sahip, S1 sınıfı esnek, çimento esaslı granit yapıştırma harcıdır.\n\n<div class='color-palette'>\n<div class='color-box' style='background-color: #FFFFFF;' title='Beyaz'></div>\n<div class='color-box' style='background-color: #969898;' title='Gri'></div>\n</div>",
+        image: "./assets/Termatect/1013_flex_mortar.jpg"
+    },
+    "termatect_1014_performans": {
+        id: "termatect_1014_performans",
+        name: "1014 PERFORMANS (Ultra Flex Granit Yapıştırıcısı)",
+        category: "Teknik Yapıştırıcılar",
+        parentCategory: "Termatect",
+        mainCategory: "Yapı Kimyasalları",
+        description: "Yüksek performanslı, kayma özelliği azaltılmış, uzun çalışma süresine sahip, S2 sınıfı çok esnek, çimento esaslı, büyük ebatlı seramik, granit, porselen yapıştırma harcıdır.\n\n<div class='color-palette'>\n<div class='color-box' style='background-color: #FFFFFF;' title='Beyaz'></div>\n<div class='color-box' style='background-color: #969898;' title='Gri'></div>\n</div>",
+        image: "./assets/Termatect/1014_performans.jpg"
+    },
+    "termatect_1017_blocker": {
+        id: "termatect_1017_blocker",
+        name: "1017 BLOCKER (Gazbeton Yapıştırıcısı)",
+        category: "Teknik Yapıştırıcılar",
+        parentCategory: "Termatect",
+        mainCategory: "Yapı Kimyasalları",
+        description: "Yüksek performanslı, dış mekanlarda, yatay ve düşey yüzeylerde kullanılabilen, çimento esaslı, tek bileşenli, suya ve dona dayanıklı, elyaf katkılı, yüksek stabilite sağlayan, gaz beton örgü harcıdır.\n\n<div class='color-palette'>\n<div class='color-box' style='background-color: #969898;' title='Gri'></div>\n</div>",
+        image: "./assets/Termatect/1017_blocker.jpg"
     },
 
     // Cubo Boya ürünleri
@@ -721,6 +759,25 @@ const productsData = {
         mainCategory: "Asma Tavan",
         description: "Kendinden taşıyıcılı hücre boşluklu asma tavan sistemidir. Aks mesafesi istenilen ölçülerde 5cmx5cm, 7.5cmx7.5cm 10cmx10cm, 15cmx15cm, 20cmx20cm, 30cmx30cm olarak proje detayına göre üretilebilir. Tavan ile tesisat arasını bir maske gibi kapatarak daha dekoratif bir görüntü sağlar.",
         image: "./assets/LacinYapi/asma_tavan/petek.jpg"
+    },
+    // Su İzolasyon Ürünleri products
+    "termatect_3001_01_kristalize": {
+        id: "termatect_3001_01_kristalize",
+        name: "3001-01 KRİSTALİZE PLUS 10 (Kristalize Su Yalıtım Malzemesi)",
+        category: "Su İzolasyon Ürünleri",
+        parentCategory: "Termatect",
+        mainCategory: "Yapı Kimyasalları",
+        description: "Çimento esaslı, kapiler etkili, pozitif ve negatif yönden uygulanan, su ve nem ile aktif hale gelen kimyasal maddeler ve özel olarak seçilmiş ince agregadan oluşmuş kristalize öze likte toz bir harçtır.\n\n<div class='color-palette'>\n<div class='color-box' style='background-color: #969898;' title='Gri'></div>\n</div>",
+        image: "./assets/Termatect/3001_kristalize_plus.jpg"
+    },
+    "termatect_3001_02_kristalize": {
+        id: "termatect_3001_02_kristalize",
+        name: "3001-02 KRİSTALİZE PLUS 20 (Kristalize Su Yalıtım Malzemesi)",
+        category: "Su İzolasyon Ürünleri",
+        parentCategory: "Termatect",
+        mainCategory: "Yapı Kimyasalları",
+        description: "Çimento esaslı, kapiler etkili, pozitif ve negatif yönden uygulanan, su ve nem ile aktif hale gelen kimyasal maddeler ve özel olarak seçilmiş ince agregadan oluşmuş kristalize öze likte toz bir harçtır.\n\n<div class='color-palette'>\n<div class='color-box' style='background-color: #969898;' title='Gri'></div>\n</div>",
+        image: "./assets/Termatect/3001_kristalize_plus.jpg"
     }
 };
 
@@ -786,13 +843,34 @@ const categories = {
             "Termatect": {
                 name: "Termatect",
                 subCategories: {
-                    "Termatect": {
-                        name: "Termatect",
+                    "Derz Dolgular": {
+                        name: "Derz Dolgular",
                         products: [
-                            "termatect_ic_cephe",
-                            "termatect_dis_cephe",
-                            "termatect_izolasyon",
                             "termatect_fuga_sil"
+                        ]
+                    },
+                    "Standart Yapıştırıcılar": {
+                        name: "Standart Yapıştırıcılar",
+                        products: [
+                            "termatect_1001_super",
+                            "termatect_1002_extra"
+                        ]
+                    },
+                    "Teknik Yapıştırıcılar": {
+                        name: "Teknik Yapıştırıcılar",
+                        products: [
+                            "termatect_1011_profesyonel",
+                            "termatect_1012_granifix",
+                            "termatect_1013_flex_mortar",
+                            "termatect_1014_performans",
+                            "termatect_1017_blocker"
+                        ]
+                    },
+                    "Su İzolasyon Ürünleri": {
+                        name: "Su İzolasyon Ürünleri",
+                        products: [
+                            "termatect_3001_01_kristalize",
+                            "termatect_3001_02_kristalize"
                         ]
                     }
                 }
