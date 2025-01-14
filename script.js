@@ -325,6 +325,9 @@ function createDropdownMenu() {
             mainCategories[product.mainCategory][product.parentCategory].add(product.category);
         }
     }
+
+    let isMouseInDropdown = false;
+    let closeTimeout;
     
     // Create dropdown structure
     for (const mainCat in mainCategories) {
@@ -335,6 +338,21 @@ function createDropdownMenu() {
         mainCatTitle.textContent = mainCat;
         categorySection.appendChild(mainCatTitle);
         
+        // Add click handler for main category
+        mainCatTitle.addEventListener('click', function(e) {
+            e.stopPropagation();
+            const wasActive = categorySection.classList.contains('active');
+            document.querySelectorAll('.category-section').forEach(section => {
+                section.classList.remove('active');
+                section.querySelectorAll('.subcategory-section').forEach(sub => {
+                    sub.classList.remove('active');
+                });
+            });
+            if (!wasActive) {
+                categorySection.classList.add('active');
+            }
+        });
+        
         // Add parent categories
         for (const parentCat in mainCategories[mainCat]) {
             const subCatSection = document.createElement('div');
@@ -344,6 +362,19 @@ function createDropdownMenu() {
             subCatTitle.textContent = parentCat;
             subCatSection.appendChild(subCatTitle);
             
+            // Add click handler for subcategory
+            subCatTitle.addEventListener('click', function(e) {
+                e.stopPropagation();
+                const wasActive = subCatSection.classList.contains('active');
+                categorySection.querySelectorAll('.subcategory-section').forEach(sub => {
+                    if (sub !== subCatSection) {
+                        sub.classList.remove('active');
+                    }
+                });
+                subCatSection.classList.toggle('active');
+                categorySection.classList.add('active');
+            });
+            
             const productList = document.createElement('ul');
             productList.className = 'product-category-list';
             
@@ -351,36 +382,33 @@ function createDropdownMenu() {
             mainCategories[mainCat][parentCat].forEach(category => {
                 const li = document.createElement('li');
                 const a = document.createElement('a');
-                // Link to main category instead of subcategory
                 a.href = `products.html#${encodeURIComponent(mainCat)}`;
                 a.textContent = category;
                 
                 a.addEventListener('click', function(e) {
-                    const currentPath = window.location.pathname;
-                    console.log('Dropdown link clicked, current path:', currentPath);
-                    console.log('Target category:', category);
-                    
-                    if (!currentPath.endsWith('products.html')) {
-                        // Let the default navigation happen
-                        return;
-                    }
-                    
-                    // If we're already on products.html
-                    e.preventDefault();
-                    const targetSection = document.getElementById(category);
-                    if (targetSection) {
-                        // Update URL hash first
-                        history.pushState(null, null, `#${encodeURIComponent(category)}`);
-                        // Then scroll to subcategory
-                        console.log('Scrolling to section:', category);
-                        scrollToSection(category);
-                    } else {
-                        // If subcategory section not found, scroll to main category
-                        const mainSection = document.getElementById(mainCat);
-                        if (mainSection) {
-                            history.pushState(null, null, `#${encodeURIComponent(mainCat)}`);
-                            scrollToSection(mainCat);
+                    if (window.location.pathname.endsWith('products.html')) {
+                        e.preventDefault();
+                        e.stopPropagation();
+                        const targetSection = document.getElementById(category);
+                        if (targetSection) {
+                            history.pushState(null, null, `#${encodeURIComponent(category)}`);
+                            scrollToSection(category);
+                        } else {
+                            const mainSection = document.getElementById(mainCat);
+                            if (mainSection) {
+                                history.pushState(null, null, `#${encodeURIComponent(mainCat)}`);
+                                scrollToSection(mainCat);
+                            }
                         }
+                        // Close dropdown after a short delay
+                        setTimeout(() => {
+                            if (!isMouseInDropdown) {
+                                dropdownContent.style.display = 'none';
+                                document.querySelectorAll('.category-section, .subcategory-section').forEach(section => {
+                                    section.classList.remove('active');
+                                });
+                            }
+                        }, 200);
                     }
                 });
                 
@@ -395,17 +423,55 @@ function createDropdownMenu() {
         dropdownContent.appendChild(categorySection);
     }
     
-    // Add hover functionality
+    // Add hover functionality for the dropdown
     const dropdown = document.querySelector('.dropdown');
     if (dropdown) {
         dropdown.addEventListener('mouseenter', function() {
+            clearTimeout(closeTimeout);
+            isMouseInDropdown = true;
             dropdownContent.style.display = 'block';
         });
         
-        dropdown.addEventListener('mouseleave', function() {
-            dropdownContent.style.display = 'none';
+        dropdown.addEventListener('mouseleave', function(e) {
+            isMouseInDropdown = false;
+            // Add a small delay before closing
+            closeTimeout = setTimeout(() => {
+                if (!isMouseInDropdown) {
+                    dropdownContent.style.display = 'none';
+                    document.querySelectorAll('.category-section, .subcategory-section').forEach(section => {
+                        section.classList.remove('active');
+                    });
+                }
+            }, 100);
+        });
+
+        // Add mouse enter/leave for dropdown content
+        dropdownContent.addEventListener('mouseenter', function() {
+            clearTimeout(closeTimeout);
+            isMouseInDropdown = true;
+        });
+
+        dropdownContent.addEventListener('mouseleave', function() {
+            isMouseInDropdown = false;
+            if (!isMouseInDropdown) {
+                dropdownContent.style.display = 'none';
+                document.querySelectorAll('.category-section, .subcategory-section').forEach(section => {
+                    section.classList.remove('active');
+                });
+            }
         });
     }
+    
+    // Close dropdown when clicking outside
+    document.addEventListener('click', function(e) {
+        if (!dropdown.contains(e.target)) {
+            isMouseInDropdown = false;
+            dropdownContent.style.display = 'none';
+            document.querySelectorAll('.category-section, .subcategory-section').forEach(section => {
+                section.classList.remove('active');
+            });
+        }
+    });
 }
 
 function displayProducts() {

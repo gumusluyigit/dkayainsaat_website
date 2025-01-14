@@ -679,6 +679,8 @@ const productsData = {
         description: "Tik yağı",
         image: "./assets/Cubo/ahsap_koruyucular/cubowood_tik_yagi.jpg"
     },
+
+    //Laçin Yapı products
     "metal_asma_tavan": {
         id: "metal_asma_tavan",
         name: "Metal Asma Tavan",
@@ -778,6 +780,97 @@ const productsData = {
         mainCategory: "Yapı Kimyasalları",
         description: "Çimento esaslı, kapiler etkili, pozitif ve negatif yönden uygulanan, su ve nem ile aktif hale gelen kimyasal maddeler ve özel olarak seçilmiş ince agregadan oluşmuş kristalize öze likte toz bir harçtır.\n\n<div class='color-palette'>\n<div class='color-box' style='background-color: #969898;' title='Gri'></div>\n</div>",
         image: "./assets/Termatect/3001_kristalize_plus.jpg"
+    },
+    // Metal Yüzey Boyaları products
+    "cubo_concept_lux_kokusuz_parlak": {
+        id: "cubo_concept_lux_kokusuz_parlak",
+        name: "CONCEPT LUX KOKUSUZ PARLAK BOYA",
+        category: "Metal Yüzey Boyaları",
+        parentCategory: "Cubo Boya",
+        mainCategory: "Boyalar",
+        description: "Ahşap, metal ve mineral yüzeylere uygulanabilen, kokusuz, su bazlı, parlak görünümlü son kat boyadır. Uzun süre parlaklığını korur, sararmaz ve tam silinebilir özelliktedir.",
+        image: "./assets/Cubo/metal_boyalar/concept_lux.png"
+    },
+    "cubo_luks_parlak_sentetik": {
+        id: "cubo_luks_parlak_sentetik",
+        name: "LÜKS PARLAK SENTETİK SON KAT",
+        category: "Metal Yüzey Boyaları",
+        parentCategory: "Cubo Boya",
+        mainCategory: "Boyalar",
+        description: "Alkid bağlayıcı esaslı, yüksek örtme gücüne sahip, lüks parlak sentetik son kat boyadır.",
+        image: "./assets/Cubo/metal_boyalar/luks_parlak_sentetik.png"
+    },
+    "cubo_luks_mat_sentetik": {
+        id: "cubo_luks_mat_sentetik",
+        name: "LÜKS MAT SENTETİK SON KAT",
+        category: "Metal Yüzey Boyaları",
+        parentCategory: "Cubo Boya",
+        mainCategory: "Boyalar",
+        description: "Alkid bağlayıcı esaslı, yüksek örtme gücüne sahip, mat sentetik son kat boyadır.",
+        image: "./assets/Cubo/metal_boyalar/luks_mat_sentetik.png"
+    },
+    "cubo_metal_antipas": {
+        id: "cubo_metal_antipas",
+        name: "CUBO METAL (ANTİPAS+ASTAR+SON KAT)",
+        category: "Metal Yüzey Boyaları",
+        parentCategory: "Cubo Boya",
+        mainCategory: "Boyalar",
+        description: "Alkid bağlayıcı esaslı, Antipas, Astar ve Son Kat uygulamasını bir arada sağlayan yüksek örtme gücüne sahip, antikorozif son kat boyadır.",
+        image: "./assets/Cubo/metal_boyalar/cubo_metal_antipas.png"
+    },
+    "cubo_enamel_parlak_sentetik": {
+        id: "cubo_enamel_parlak_sentetik",
+        name: "ENAMEL PARLAK SENTETİK SON KAT",
+        category: "Metal Yüzey Boyaları",
+        parentCategory: "Cubo Boya",
+        mainCategory: "Boyalar",
+        description: "Alkid bağlayıcı esaslı, yüksek örtme gücüne sahip, parlak sentetik son kat boyadır.",
+        image: "./assets/Cubo/metal_boyalar/enamel_parlak.png"
+    },
+    "cubo_luks_sentetik_astar": {
+        id: "cubo_luks_sentetik_astar",
+        name: "LÜKS SENTETİK ASTAR",
+        category: "Metal Yüzey Boyaları",
+        parentCategory: "Cubo Boya",
+        mainCategory: "Boyalar",
+        description: "Alkid bağlayıcı esaslı, solvent bazlı, ilk kat mat sentetik astardır.",
+        image: "./assets/Cubo/metal_boyalar/luks_sentetik_astar.png"
+    },
+    "cubo_luks_antipas": {
+        id: "cubo_luks_antipas",
+        name: "LÜKS ANTİPAS",
+        category: "Metal Yüzey Boyaları",
+        parentCategory: "Cubo Boya",
+        mainCategory: "Boyalar",
+        description: "Alkid bağlayıcı esaslı, bünyesinde bulunan antikorozif malzemeler sayesinde yüksek pas önleme gücüne sahip solvent bazlı, mat, antikorozif özellikli metal astarıdır.",
+        image: "./assets/Cubo/metal_boyalar/luks_antipas.png"
+    },
+    "cubo_ozel_sera_boyasi": {
+        id: "cubo_ozel_sera_boyasi",
+        name: "ÖZEL SERA BOYASI",
+        category: "Metal Yüzey Boyaları",
+        parentCategory: "Cubo Boya",
+        mainCategory: "Boyalar",
+        description: "Alkid bağlayıcı esaslı, astar ve son kat uygulamasını bir arada sağlayan yüksek örtme gücüne sahip, mat antikorozif boyadır.",
+        image: "./assets/Cubo/metal_boyalar/ozel_sera.png"
+    },
+    "cubo_altin_yaldiz": {
+        id: "cubo_altin_yaldiz",
+        name: "ALTIN YALDIZ BOYA",
+        category: "Metal Yüzey Boyaları",
+        parentCategory: "Cubo Boya",
+        mainCategory: "Boyalar",
+        description: "120ᵒC ısıya dayanıklı Hidrokarbon reçine esaslı, altın pigment ihtiva eden, çabuk kuruyan, metal galvaniz yüzey boyasıdır.",
+        image: "./assets/Cubo/metal_boyalar/altin_yaldiz.png"
+    },
+    "cubo_aluminyum_yaldiz": {
+        id: "cubo_aluminyum_yaldiz",
+        name: "ALÜMİNYUM YALDIZ BOYA",
+        category: "Metal Yüzey Boyaları",
+        parentCategory: "Cubo Boya",
+        mainCategory: "Boyalar",
+        description: "120ᵒC ısıya dayanıklı Hidrokarbon reçine esaslı, alüminyum pigment ihtiva eden, çabuk kuruyan, metal galvaniz yüzey boyasıdır.",
+        image: "./assets/Cubo/metal_boyalar/aluminyum_yaldiz.png"
     }
 };
 
@@ -938,6 +1031,21 @@ const categories = {
                             "cubowood_parke_vernigi",
                             "cubowood_yat_vernik",
                             "cubowood_tik_yagi"
+                        ]
+                    },
+                    "Metal Yüzey Boyaları": {
+                        name: "Metal Yüzey Boyaları",
+                        products: [
+                            "cubo_concept_lux_kokusuz_parlak",
+                            "cubo_luks_parlak_sentetik",
+                            "cubo_luks_mat_sentetik",
+                            "cubo_metal_antipas",
+                            "cubo_enamel_parlak_sentetik",
+                            "cubo_luks_sentetik_astar",
+                            "cubo_luks_antipas",
+                            "cubo_ozel_sera_boyasi",
+                            "cubo_altin_yaldiz",
+                            "cubo_aluminyum_yaldiz"
                         ]
                     }
                 }
