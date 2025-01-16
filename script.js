@@ -133,16 +133,12 @@ document.addEventListener("DOMContentLoaded", function() {
     // Initialize Swiper if it exists on the page
     if (document.querySelector('.swiper')) {
         const swiper = new Swiper('.swiper', {
-            slidesPerView: 1, // Show only one slide at a time
-            spaceBetween: 30,
+            slidesPerView: 1,
+            spaceBetween: 0,
             loop: true,
             navigation: {
                 nextEl: '.swiper-button-next',
                 prevEl: '.swiper-button-prev',
-            },
-            pagination: {
-                el: '.swiper-pagination',
-                clickable: true,
             },
             autoplay: {
                 delay: 5000,
@@ -229,74 +225,57 @@ document.addEventListener("DOMContentLoaded", function() {
             "dkaya_perlitli_siva",
             "dkaya_saten",
             "dkaya_kartonpiyer",
-            "dkaya_makina_siva"
+            "dkaya_makina_siva",
+            "cubo_seffaf_astar_konsantre",
+            "cubo_saten_alci_astari",
+            "cubo_universal_primer_astar",
+            "cubo_donusum_astari",
+            "cubo_acrytech_primer_astar",
+            "cubo_komfort_silikonlu_dis_cephe_astari",
+            "cubo_dekoratif_siva_astari",
+            "cubo_brut_beton_astari"
         ];
 
         // İlk slide için ürünleri yükle (0-3)
         const firstSlideContainer = document.getElementById('featured-products-1');
         const firstSlideProducts = mostViewedProducts.slice(0, 4);
         
-        // Eğer yeterli görüntülenen ürün yoksa, varsayılan ürünlerle tamamla
-        if (firstSlideProducts.length < 4) {
-            const remainingCount = 4 - firstSlideProducts.length;
-            const defaultFirstSlide = defaultProducts.slice(0, remainingCount);
-            
-            // Önce görüntülenen ürünleri ekle
-            firstSlideProducts.forEach(item => {
-                const productCard = createProductCard(item.product);
-                firstSlideContainer.innerHTML += productCard;
-            });
-            
-            // Kalan boşlukları varsayılan ürünlerle doldur
-            defaultFirstSlide.forEach(productId => {
-                const product = productsData[productId];
-                const productCard = createProductCard(product);
-                firstSlideContainer.innerHTML += productCard;
-            });
-        } else {
-            // Sadece en çok görüntülenen ürünleri kullan
-            firstSlideProducts.forEach(item => {
-                const productCard = createProductCard(item.product);
-                firstSlideContainer.innerHTML += productCard;
-            });
-        }
-
         // İkinci slide için ürünleri yükle (4-7)
         const secondSlideContainer = document.getElementById('featured-products-2');
         const secondSlideProducts = mostViewedProducts.slice(4, 8);
-        
-        // Aynı mantıkla ikinci slide'ı doldur
-        if (secondSlideProducts.length < 4) {
-            const remainingCount = 4 - secondSlideProducts.length;
-            const defaultSecondSlide = defaultProducts.slice(4, 4 + remainingCount);
-            
-            secondSlideProducts.forEach(item => {
-                const productCard = createProductCard(item.product);
-                secondSlideContainer.innerHTML += productCard;
-            });
-            
-            defaultSecondSlide.forEach(productId => {
-                const product = productsData[productId];
-                const productCard = createProductCard(product);
-                secondSlideContainer.innerHTML += productCard;
-            });
-        } else {
-            secondSlideProducts.forEach(item => {
-                const productCard = createProductCard(item.product);
-                secondSlideContainer.innerHTML += productCard;
-            });
-        }
 
-        // Swiper'ı başlat
-        const swiper = new Swiper('.swiper', {
-            navigation: {
-                nextEl: '.swiper-button-next',
-                prevEl: '.swiper-button-prev',
-            },
-            autoplay: {
-                delay: 10000,
-                disableOnInteraction: false,
-            },
+        // Üçüncü slide için ürünleri yükle (8-11)
+        const thirdSlideContainer = document.getElementById('featured-products-3');
+        const thirdSlideProducts = mostViewedProducts.slice(8, 12);
+
+        // Dördüncü slide için ürünleri yükle (12-15)
+        const fourthSlideContainer = document.getElementById('featured-products-4');
+        const fourthSlideProducts = mostViewedProducts.slice(12, 16);
+        
+        // Her slide için ürünleri ekle ve eksik olanları varsayılan ürünlerle tamamla
+        [
+            { container: firstSlideContainer, products: firstSlideProducts, start: 0, end: 4 },
+            { container: secondSlideContainer, products: secondSlideProducts, start: 4, end: 8 },
+            { container: thirdSlideContainer, products: thirdSlideProducts, start: 8, end: 12 },
+            { container: fourthSlideContainer, products: fourthSlideProducts, start: 12, end: 16 }
+        ].forEach(slide => {
+            // Önce görüntülenen ürünleri ekle
+            slide.products.forEach(item => {
+                const productCard = createProductCard(item.product);
+                slide.container.innerHTML += productCard;
+            });
+            
+            // Eksik ürünleri varsayılan ürünlerle tamamla
+            const remainingCount = 4 - slide.products.length;
+            if (remainingCount > 0) {
+                const defaultSlideProducts = defaultProducts.slice(slide.start, slide.start + remainingCount);
+                defaultSlideProducts.forEach(productId => {
+                    if (productsData[productId]) {
+                        const productCard = createProductCard(productsData[productId]);
+                        slide.container.innerHTML += productCard;
+                    }
+                });
+            }
         });
     }
 });
@@ -409,6 +388,10 @@ function createDropdownMenu() {
                                 });
                             }
                         }, 200);
+                    } else {
+                        // If not on products.html, navigate to the specific category
+                        e.preventDefault();
+                        window.location.href = `products.html#${encodeURIComponent(category)}`;
                     }
                 });
                 

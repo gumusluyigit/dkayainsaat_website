@@ -871,6 +871,106 @@ const productsData = {
         mainCategory: "Boyalar",
         description: "120ᵒC ısıya dayanıklı Hidrokarbon reçine esaslı, alüminyum pigment ihtiva eden, çabuk kuruyan, metal galvaniz yüzey boyasıdır.",
         image: "./assets/Cubo/metal_boyalar/aluminyum_yaldiz.png"
+    },
+    // Astarlar ve Macunlar products
+    "cubo_seffaf_astar_konsantre": {
+        id: "cubo_seffaf_astar_konsantre",
+        name: "Şeffaf Astar (1/7 Konsantre)",
+        category: "Astarlar ve Macunlar",
+        parentCategory: "Cubo Boya",
+        mainCategory: "Boyalar",
+        description: "Su bazlı, akrilik kopolimer bağlayıcı esaslı, şeffaf iç ve dış cephe astarıdır.",
+        image: "./assets/Cubo/astarlar_ve_macunlar/seffaf_astar_konsantre.png"
+    },
+    "cubo_saten_alci_astari": {
+        id: "cubo_saten_alci_astari",
+        name: "Saten Alçı Astarı",
+        category: "Astarlar ve Macunlar",
+        parentCategory: "Cubo Boya",
+        mainCategory: "Boyalar",
+        description: "Su bazlı, akrilik kopolimer bağlayıcı esaslı, kullanıma hazır, şeffaf iç cephe alçı yüzey astarıdır.",
+        image: "./assets/Cubo/astarlar_ve_macunlar/saten_alci.png"
+    },
+    "cubo_universal_primer_astar": {
+        id: "cubo_universal_primer_astar",
+        name: "Universal Primer Astar",
+        category: "Astarlar ve Macunlar",
+        parentCategory: "Cubo Boya",
+        mainCategory: "Boyalar",
+        description: "Su bazlı, akrilik kopolimer bağlayıcı esaslı, silikonlu, mat, dolgulu iç ve dış cephe astarıdır.",
+        image: "./assets/Cubo/astarlar_ve_macunlar/universal_primer.png"
+    },
+    "cubo_donusum_astari": {
+        id: "cubo_donusum_astari",
+        name: "Dönüşüm Astarı",
+        category: "Astarlar ve Macunlar",
+        parentCategory: "Cubo Boya",
+        mainCategory: "Boyalar",
+        description: "Akrilik kopolimer bağlayıcı esaslı, mat iç ve dış cephe dönüşüm astarıdır.",
+        image: "./assets/Cubo/astarlar_ve_macunlar/donusum_astari.png"
+    },
+    "cubo_acrytech_primer_astar": {
+        id: "cubo_acrytech_primer_astar",
+        name: "Acrytech Primer Astar",
+        category: "Astarlar ve Macunlar",
+        parentCategory: "Cubo Boya",
+        mainCategory: "Boyalar",
+        description: "Su bazlı, saf akrilik bağlayıcı esaslı, silikonlu, mat, dolgulu, yapışma gücü (aderans) yüksek, elastik dış cephe astarıdır.",
+        image: "./assets/Cubo/astarlar_ve_macunlar/acrytech_primer.png"
+    },
+    "cubo_komfort_silikonlu_dis_cephe_astari": {
+        id: "cubo_komfort_silikonlu_dis_cephe_astari",
+        name: "Komfort Silikonlu Dış Cephe Astarı",
+        category: "Astarlar ve Macunlar",
+        parentCategory: "Cubo Boya",
+        mainCategory: "Boyalar",
+        description: "Su bazlı, akrilik kopolimer bağlayıcı esaslı, silikonlu, mat, dolgulu dış cephe astarıdır.",
+        image: "./assets/Cubo/astarlar_ve_macunlar/komfort_silikonlu_dis_cephe.png"
+    },
+    "cubo_dekoratif_siva_astari": {
+        id: "cubo_dekoratif_siva_astari",
+        name: "Dekoratif Sıva Astarı",
+        category: "Astarlar ve Macunlar",
+        parentCategory: "Cubo Boya",
+        mainCategory: "Boyalar",
+        description: "Su bazlı, akrilik kopolimer bağlayıcı esaslı, silikonlu, mat, dolgulu dekoratif sıva astarıdır.",
+        image: "./assets/Cubo/astarlar_ve_macunlar/dekoratif_siva.png"
+    },
+    "cubo_brut_beton_astari": {
+        id: "cubo_brut_beton_astari",
+        name: "Brüt Beton Astarı",
+        category: "Astarlar ve Macunlar",
+        parentCategory: "Cubo Boya",
+        mainCategory: "Boyalar",
+        description: "Su bazlı, akrilik kopolimer bağlayıcı esaslı, brüt beton yüzeyler için geliştirilmiş, aderans arttırıcı, mat, renkli astardır.",
+        image: "./assets/Cubo/astarlar_ve_macunlar/brut_beton.png"
+    },
+    "cubo_acrylic_putty_int": {
+        id: "cubo_acrylic_putty_int",
+        name: "Acrylic Putty- Int İç Cephe Macunu",
+        category: "Astarlar ve Macunlar",
+        parentCategory: "Cubo Boya",
+        mainCategory: "Boyalar",
+        description: "Akrilik kopolimer esaslı, su bazlı ince iç cephe macunudur.",
+        image: "./assets/Cubo/astarlar_ve_macunlar/acrylic_putty_int.png"
+    },
+    "cubo_acrylic_putty_ext": {
+        id: "cubo_acrylic_putty_ext",
+        name: "Acrylic Putty- Ext Dış Cephe Macunu",
+        category: "Astarlar ve Macunlar",
+        parentCategory: "Cubo Boya",
+        mainCategory: "Boyalar",
+        description: "Akrilik kopolimer esaslı, su bazlı dış cephe macunudur.",
+        image: "./assets/Cubo/astarlar_ve_macunlar/acrylic_putty_ext.png"
+    },
+    "cubo_super_plastik_tutkal": {
+        id: "cubo_super_plastik_tutkal",
+        name: "Süper Plastik Tutkal",
+        category: "Astarlar ve Macunlar",
+        parentCategory: "Cubo Boya",
+        mainCategory: "Boyalar",
+        description: "Su bazlı, sağlam ve esnek film oluşturan, vinil asetat homo polimer esaslı üstün nitelikli yapıştırıcıdır.",
+        image: "./assets/Cubo/astarlar_ve_macunlar/super_plastik_tutkal.png"
     }
 };
 
@@ -1046,6 +1146,22 @@ const categories = {
                             "cubo_ozel_sera_boyasi",
                             "cubo_altin_yaldiz",
                             "cubo_aluminyum_yaldiz"
+                        ]
+                    },
+                    "Astarlar ve Macunlar": {
+                        name: "Astarlar ve Macunlar",
+                        products: [
+                            "cubo_seffaf_astar_konsantre",
+                            "cubo_saten_alci_astari",
+                            "cubo_universal_primer_astar",
+                            "cubo_donusum_astari",
+                            "cubo_acrytech_primer_astar",
+                            "cubo_komfort_silikonlu_dis_cephe_astari",
+                            "cubo_dekoratif_siva_astari",
+                            "cubo_brut_beton_astari",
+                            "cubo_acrylic_putty_int",
+                            "cubo_acrylic_putty_ext",
+                            "cubo_super_plastik_tutkal"
                         ]
                     }
                 }
